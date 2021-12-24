@@ -6,14 +6,31 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eefd1a0-9d6b-4ec6-b8cb-14cb7882f1fe" name="Default Changelist" comment="" />
+    <list default="true" id="8eefd1a0-9d6b-4ec6-b8cb-14cb7882f1fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cailms/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cailms/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cailms/Cailms.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cailms/Cailms.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -22,6 +39,7 @@
         <option value="$PROJECT_DIR$/Cailms.Application/Class1.cs" />
         <option value="$PROJECT_DIR$/Cailms.Domain/Class1.cs" />
         <option value="$PROJECT_DIR$/Cailms.Common/Class1.cs" />
+        <option value="$PROJECT_DIR$/Cailms/Cailms.csproj" />
       </list>
     </option>
   </component>
@@ -77,8 +95,16 @@
       <option name="presentableId" value="Default" />
       <updated>1640350178367</updated>
       <workItem from="1640350186774" duration="320000" />
-      <workItem from="1640350529932" duration="355000" />
+      <workItem from="1640350529932" duration="1312000" />
     </task>
+    <task id="LOCAL-00001" summary="initial project structure added">
+      <created>1640350919137</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640350919137</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +120,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="initial project structure added" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial project structure added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="432" key="Rider.ProjectTemplateDialog.Size" timestamp="1640350808112">
