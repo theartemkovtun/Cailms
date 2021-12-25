@@ -10,4 +10,15 @@
         <PackageReference Include="MediatR" Version="9.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Mappings" />
+      <Folder Include="Models" />
+      <Folder Include="Requests" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Cailms.Common\Cailms.Common.csproj" />
+      <ProjectReference Include="..\Cailms.Domain\Cailms.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

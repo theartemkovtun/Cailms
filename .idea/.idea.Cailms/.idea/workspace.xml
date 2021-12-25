@@ -17,8 +17,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eefd1a0-9d6b-4ec6-b8cb-14cb7882f1fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Cailms.Domain/Configurations/DatabaseConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cailms.Domain/Extensions/SqlParameterExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cailms.Domain/Helpers/Attributes/QueryParamIgnoreAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cailms.Domain/Helpers/Attributes/QueryParamNameAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cailms.Domain/Helpers/Converters/TypeConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cailms.Domain/Repositories/Repository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cailms/Bootstrapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cailms/Controllers/MediatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cailms/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cailms/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cailms/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cailms/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cailms.Application/Cailms.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cailms.Application/Cailms.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cailms.Domain/Cailms.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cailms.Domain/Cailms.Domain.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cailms/Cailms.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cailms/Cailms.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cailms/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cailms/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +45,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0741D33D-D3FC-47C2-A0E8-74E1810361AF/25/a73eec0c/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -40,16 +55,29 @@
         <option value="$PROJECT_DIR$/Cailms.Domain/Class1.cs" />
         <option value="$PROJECT_DIR$/Cailms.Common/Class1.cs" />
         <option value="$PROJECT_DIR$/Cailms/Cailms.csproj" />
+        <option value="$PROJECT_DIR$/Cailms/Bootstrapper.cs" />
+        <option value="$PROJECT_DIR$/Cailms/Controllers/MediatorController.cs" />
+        <option value="$PROJECT_DIR$/Cailms.Domain/Helpers/Converters/TypeConverter.cs" />
+        <option value="$PROJECT_DIR$/Cailms.Domain/Helpers/Attributes/QueryParamIgnoreAttribute.cs" />
+        <option value="$PROJECT_DIR$/Cailms.Domain/Helpers/Attributes/QueryParamNameAttribute.cs" />
+        <option value="$PROJECT_DIR$/Cailms.Domain/Extensions/SqlParameterExtensions.cs" />
+        <option value="$PROJECT_DIR$/Cailms.Domain/Configurations/DatabaseConfiguration.cs" />
+        <option value="$PROJECT_DIR$/Cailms.Domain/Repositories/Repository.cs" />
+        <option value="$PROJECT_DIR$/Cailms/Startup.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="22jTpCg9HtHWFIhGjIaUCJUAA9W" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30008045" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
@@ -96,6 +124,9 @@
       <updated>1640350178367</updated>
       <workItem from="1640350186774" duration="320000" />
       <workItem from="1640350529932" duration="1312000" />
+      <workItem from="1640359970093" duration="3347000" />
+      <workItem from="1640367057539" duration="657000" />
+      <workItem from="1640379859139" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="initial project structure added">
       <created>1640350919137</created>
@@ -117,6 +148,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -124,6 +156,86 @@
     <option name="LAST_COMMIT_MESSAGE" value="initial project structure added" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="2517" height="519" key="GridCell.Tab.0.bottom" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.0.center" timestamp="1640364270358">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270358" />
+    <state width="2517" height="519" key="GridCell.Tab.0.left" timestamp="1640364270357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270357" />
+    <state width="2517" height="519" key="GridCell.Tab.0.right" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.1.bottom" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.1.center" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.1.left" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.1.right" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.2.bottom" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.2.center" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.2.left" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.2.right" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.3.bottom" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.3.center" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.3.left" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.3.right" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.4.bottom" timestamp="1640364270360">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.4.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270360" />
+    <state width="2517" height="519" key="GridCell.Tab.4.center" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.4.center/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.4.left" timestamp="1640364270359">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.4.left/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270359" />
+    <state width="2517" height="519" key="GridCell.Tab.4.right" timestamp="1640364270360">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.4.right/0.0.2560.1400@0.0.2560.1400" timestamp="1640364270360" />
     <state x="872" y="432" key="Rider.ProjectTemplateDialog.Size" timestamp="1640350808112">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

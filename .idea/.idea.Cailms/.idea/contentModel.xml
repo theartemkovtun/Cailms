@@ -10,7 +10,60 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Bootstrapper.cs" t="Include" />
         <e p="Cailms.csproj" t="IncludeRecursive" />
+        <e p="ClientApp" t="Include">
+          <e p=".browserslistrc" t="Include" />
+          <e p=".editorconfig" t="Include" />
+          <e p=".gitignore" t="Include" />
+          <e p="angular.json" t="Include" />
+          <e p="e2e" t="Include">
+            <e p="protractor.conf.js" t="Include" />
+            <e p="src" t="Include">
+              <e p="app.e2e-spec.ts" t="Include" />
+              <e p="app.po.ts" t="Include" />
+            </e>
+            <e p="tsconfig.json" t="Include" />
+          </e>
+          <e p="karma.conf.js" t="Include" />
+          <e p="package-lock.json" t="Include" />
+          <e p="package.json" t="Include" />
+          <e p="README.md" t="Include" />
+          <e p="src" t="Include">
+            <e p="app" t="Include">
+              <e p="app-routing.module.ts" t="Include" />
+              <e p="app.component.html" t="Include" />
+              <e p="app.component.scss" t="Include" />
+              <e p="app.component.spec.ts" t="Include" />
+              <e p="app.component.ts" t="Include" />
+              <e p="app.module.ts" t="Include" />
+            </e>
+            <e p="assets" t="Include">
+              <e p=".gitkeep" t="Include" />
+            </e>
+            <e p="environments" t="Include">
+              <e p="environment.prod.ts" t="Include" />
+              <e p="environment.ts" t="Include" />
+            </e>
+            <e p="favicon.ico" t="Include" />
+            <e p="index.html" t="Include" />
+            <e p="main.ts" t="Include" />
+            <e p="polyfills.ts" t="Include" />
+            <e p="styles.scss" t="Include" />
+            <e p="test.ts" t="Include" />
+          </e>
+          <e p="tsconfig.app.json" t="Include" />
+          <e p="tsconfig.json" t="Include" />
+          <e p="tsconfig.spec.json" t="Include" />
+          <e p="tslint.json" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="MediatorController.cs" t="Include" />
+        </e>
+        <e p="Mappings" t="Include">
+          <e p="Profiles" t="Include" />
+        </e>
+        <e p="Models" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
@@ -27,6 +80,8 @@
       <e p="Cailms.Application" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Cailms.Application.csproj" t="IncludeRecursive" />
+        <e p="Mappings" t="Include" />
+        <e p="Models" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
@@ -34,6 +89,7 @@
             </e>
           </e>
         </e>
+        <e p="Requests" t="Include" />
       </e>
       <e p="Cailms.Common" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -49,12 +105,33 @@
       <e p="Cailms.Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Cailms.Domain.csproj" t="IncludeRecursive" />
+        <e p="Configurations" t="Include">
+          <e p="DatabaseConfiguration.cs" t="Include" />
+        </e>
+        <e p="Constants" t="Include" />
+        <e p="extensions" t="Include">
+          <e p="SqlParameterExtensions.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="Attributes" t="Include">
+            <e p="QueryParamIgnoreAttribute.cs" t="Include" />
+            <e p="QueryParamNameAttribute.cs" t="Include" />
+          </e>
+          <e p="Converters" t="Include">
+            <e p="TypeConverter.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Models" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
               <e p="Cailms.Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="Contracts" t="Include" />
+          <e p="Repository.cs" t="Include" />
         </e>
       </e>
       <e p="Cailms.sln" t="IncludeFlat" />
