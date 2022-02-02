@@ -1,0 +1,24 @@
+[container] {
+  padding: 5px 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  cursor:pointer;
+}
+
+[name] {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+[price] {
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 12px;
+}
+
+.crossed {
+  text-decoration: line-through;
+}

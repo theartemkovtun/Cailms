@@ -1,12 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms", "Cailms\Cailms.csproj", "{0CD6FEF6-EDAE-46ED-A1AE-9274A977DD5A}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cailms", "Cailms\Cailms.csproj", "{0CD6FEF6-EDAE-46ED-A1AE-9274A977DD5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.Application", "Cailms.Application\Cailms.Application.csproj", "{11DFDFD3-3DDE-4904-86E1-AD9DAD5BF473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cailms.Application", "Cailms.Application\Cailms.Application.csproj", "{11DFDFD3-3DDE-4904-86E1-AD9DAD5BF473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.Domain", "Cailms.Domain\Cailms.Domain.csproj", "{36D2D716-E318-4C87-98DE-64A2720DF8A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cailms.Domain", "Cailms.Domain\Cailms.Domain.csproj", "{36D2D716-E318-4C87-98DE-64A2720DF8A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.Common", "Cailms.Common\Cailms.Common.csproj", "{07535D47-34A2-4915-8FC1-187F401D09AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cailms.Common", "Cailms.Common\Cailms.Common.csproj", "{07535D47-34A2-4915-8FC1-187F401D09AE}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Cailms.Database", "Cailms.Database\Cailms.Database.sqlproj", "{4BF785CE-4DAA-4ACE-9746-AD3A26708466}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,6 +21,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0CD6FEF6-EDAE-46ED-A1AE-9274A977DD5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0CD6FEF6-EDAE-46ED-A1AE-9274A977DD5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD6FEF6-EDAE-46ED-A1AE-9274A977DD5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD6FEF6-EDAE-46ED-A1AE-9274A977DD5A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{11DFDFD3-3DDE-4904-86E1-AD9DAD5BF473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11DFDFD3-3DDE-4904-86E1-AD9DAD5BF473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11DFDFD3-3DDE-4904-86E1-AD9DAD5BF473}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -28,5 +35,17 @@ Global
 		{07535D47-34A2-4915-8FC1-187F401D09AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07535D47-34A2-4915-8FC1-187F401D09AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07535D47-34A2-4915-8FC1-187F401D09AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF785CE-4DAA-4ACE-9746-AD3A26708466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF785CE-4DAA-4ACE-9746-AD3A26708466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF785CE-4DAA-4ACE-9746-AD3A26708466}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4BF785CE-4DAA-4ACE-9746-AD3A26708466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF785CE-4DAA-4ACE-9746-AD3A26708466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF785CE-4DAA-4ACE-9746-AD3A26708466}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AA53AC8-4975-4653-9C8B-3AC2BF01CB5E}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,34 @@
+<div date-container>
+  <div months>
+    <div month no-select (click)="selectMonth(Month.Full)" [class.selected-month]="month == Month.Full" full-year>Full</div>
+    <div month no-select (click)="selectMonth(Month.January)" [class.selected-month]="month == Month.January">Jan</div>
+    <div month no-select (click)="selectMonth(Month.February)" [class.selected-month]="month == Month.February" [class.blocked]="this.isMonthBlocked(Month.February)">Feb</div>
+    <div month no-select (click)="selectMonth(Month.March)" [class.selected-month]="month == Month.March" [class.blocked]="this.isMonthBlocked(Month.March)">Mar</div>
+    <div month no-select (click)="selectMonth(Month.April)" [class.selected-month]="month == Month.April" [class.blocked]="this.isMonthBlocked(Month.April)">Apr</div>
+    <div month no-select (click)="selectMonth(Month.May)" [class.selected-month]="month == Month.May" [class.blocked]="this.isMonthBlocked(Month.May)">May</div>
+    <div month no-select (click)="selectMonth(Month.June)" [class.selected-month]="month == Month.June" [class.blocked]="this.isMonthBlocked(Month.June)">Jun</div>
+    <div month no-select (click)="selectMonth(Month.July)" [class.selected-month]="month == Month.July" [class.blocked]="this.isMonthBlocked(Month.July)">Jul</div>
+    <div month no-select (click)="selectMonth(Month.August)" [class.selected-month]="month == Month.August" [class.blocked]="this.isMonthBlocked(Month.August)">Aug</div>
+    <div month no-select (click)="selectMonth(Month.September)" [class.selected-month]="month == Month.September" [class.blocked]="this.isMonthBlocked(Month.September)">Sep</div>
+    <div month no-select (click)="selectMonth(Month.October)" [class.selected-month]="month == Month.October" [class.blocked]="this.isMonthBlocked(Month.October)">Oct</div>
+    <div month no-select (click)="selectMonth(Month.November)" [class.selected-month]="month == Month.November" [class.blocked]="this.isMonthBlocked(Month.November)">Nov</div>
+    <div month no-select (click)="selectMonth(Month.December)" [class.selected-month]="month == Month.December" [class.blocked]="this.isMonthBlocked(Month.December)">Dec</div>
+  </div>
+  <div year>
+    <i
+      (click)="previousYear()"
+      year-switch
+      nz-icon
+      nzType="left"
+      nzTheme="outline"></i>
+    <span no-select year-value>{{year}}</span>
+    <i
+      [class.blocked]="isNextYearBlocked()"
+      (click)="nextYear()"
+      year-switch
+      nz-icon
+      nzType="right"
+      nzTheme="outline"
+    ></i>
+  </div>
+</div>

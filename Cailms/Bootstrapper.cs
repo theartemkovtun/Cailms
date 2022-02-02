@@ -1,5 +1,11 @@
 ﻿using System;
+using System.Reflection;
 using AutoMapper;
+using Cailms.Application.Requests.Transfers.Commands.AddTransfer;
+using Cailms.Domain.Configurations;
+using Cailms.Domain.Repositories;
+using Cailms.Domain.Repositories.Contracts;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +20,7 @@ namespace Cailms
             services.AddDistributedMemoryCache();
             services.AddHttpContextAccessor();
             
+            services.AddMediatR(typeof(AddTransferCommand).GetTypeInfo().Assembly);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             
             services.AddCors(options =>
@@ -30,10 +37,15 @@ namespace Cailms
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
             
             services.AddAuthorization();
-            
+
+            services.AddSpaStaticFiles(c =>
+            {
+                c.RootPath = "ClientApp/dist/ClientApp";
+            });
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cails API", Version = "V1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cailms API", Version = "V1" });
             });
             
             services.BindOptions(configuration);
@@ -43,6 +55,7 @@ namespace Cailms
         
         private static void BindOptions(this IServiceCollection services, IConfiguration configuration)
         {
+            services.Configure<DatabaseConfiguration>(configuration.GetSection("DatabaseConfiguration"));
         }
 
         private static void AddEngines(this IServiceCollection services)
@@ -51,6 +64,8 @@ namespace Cailms
         
         private static void AddRepositories(this IServiceCollection services)
         {
+            services.AddScoped<ITransferRepository, TransferRepository>();
+            services.AddScoped<IStatisticsRepository, StatisticsRepository>();
         }
     }
 }

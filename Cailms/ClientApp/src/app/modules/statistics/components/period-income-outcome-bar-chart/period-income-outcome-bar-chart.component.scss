@@ -1,0 +1,39 @@
+[container] {
+  height: 680px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[daily-line-chart] {
+  padding: 30px 15px;
+  width: 100%;
+}
+
+[no-data-container] img {
+  width: 300px;
+}
+
+[actions] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 25px
+}
+
+[actions] [bar-type] {
+  margin-left: 10px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+[actions] [bar-type]:not(.selected-type):hover {
+  background-color: #efefef;
+}
+
+.selected-type {
+  background-color: #585858;
+  color: white;
+}

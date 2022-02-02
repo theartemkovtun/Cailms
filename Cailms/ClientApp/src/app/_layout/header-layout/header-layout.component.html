@@ -1,0 +1,19 @@
+<div container>
+  <div class="header">
+    <div header-content>
+      <span logo no-select>Cailms</span>
+      <div flex>
+        <div actions>
+          <button (click)="navigateToTransferCreation()" primary-button transfer-button>
+            <i nz-icon nzType="swap" nzTheme="outline"></i>
+            <span>New transfer</span>
+          </button>
+        </div>
+        <nz-avatar (click)="navigateToProfile()" avatar [nzSize]="40" [nzSrc]="this.user?.photoUrl" nzIcon="user"></nz-avatar>
+      </div>
+    </div>
+  </div>
+  <div content>
+    <router-outlet></router-outlet>
+  </div>
+</div>

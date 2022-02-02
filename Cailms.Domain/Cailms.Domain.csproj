@@ -14,10 +14,4 @@
       <ProjectReference Include="..\Cailms.Common\Cailms.Common.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Constants" />
-      <Folder Include="Models" />
-      <Folder Include="Repositories\Contracts" />
-    </ItemGroup>
-
 </Project>

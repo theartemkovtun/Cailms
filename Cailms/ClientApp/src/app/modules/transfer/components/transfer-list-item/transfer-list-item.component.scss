@@ -1,0 +1,139 @@
+[container] {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f0f0f0;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+[container-header] {
+  justify-content: space-between;
+  padding: 0 10px 15px 10px;
+}
+
+[transfers-day] {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+[total-toggle-button] {
+  cursor: pointer;
+}
+
+[hover-toggle-button] {
+  display: none;
+}
+
+[container-header]:hover [hover-toggle-button] {
+  display: block;
+}
+
+[day-total-panel] {
+  margin-bottom: 10px;
+}
+
+[transfer-record] {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:10px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+[transfer-record]:hover {
+  border: 1px solid #f0f0f0;
+  padding: 10px 15px;
+}
+
+[transfer-info] {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[transfer-record-description] {
+  display: flex;
+  flex-direction: column;
+}
+
+[transfer-actions] {
+  display: none;
+  align-items: center;
+  margin-right: 50px;
+}
+
+[icon-button] {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+[transfer-action-button] {
+  margin: 0 10px;
+}
+
+[icon-button]:hover {
+  background-color: #f6f6f6;
+}
+
+[description-icon] {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+
+
+[transfer-record]:hover [transfer-actions]{
+  display: flex;
+}
+
+[transfer-value] {
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 17px;
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+[transfer-item-name] {
+  font-size: 17px;
+}
+
+[transfer-item-category] {
+  color: #c6c6c6;
+  font-size: 14px;
+}
+
+.outcome-value {
+  color: #e60f00;
+}
+
+.income-value {
+  color: #00b309
+}
+
+[no-data-container] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+[no-data-container] img {
+  margin: 100px 0 25px 0;
+  width: 200px;
+}
+
+[no-data-container] span {
+  color: #d9d9d9;
+  font-size: 20px;
+  text-transform: uppercase;
+}

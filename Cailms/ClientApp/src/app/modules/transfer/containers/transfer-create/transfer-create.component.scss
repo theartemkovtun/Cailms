@@ -1,0 +1,101 @@
+[container] {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+[back-button] {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  padding: 7px 20px;
+  border-radius: 5px;
+  width: fit-content;
+  margin-top: 15px
+}
+
+[back-button]:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+[back-button] i {
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+[form] {
+  display: flex;
+}
+
+[calendar] {
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  width: 450px;
+}
+
+
+[form-input-section] {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px
+}
+
+[form-input-label] {
+  margin-bottom: 5px;
+  font-family: "Titillium Web", sans-serif;
+}
+
+[price-input] {
+  width: 120px;
+}
+
+[type-switch] {
+  margin-bottom: 25px
+}
+
+[date-pick] {
+  width: fit-content;
+}
+
+[inputs] {
+  width: 100%;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+[form] {
+  margin-top: 50px
+}
+
+[actions] {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 25px;
+}
+
+nz-divider {
+  margin: 4px 0;
+}
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 8px;
+}
+
+.add-item {
+  flex: 0 0 auto;
+  padding: 8px;
+  display: block;
+}
+
+[type-label] {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+[type-label] i {
+  margin-right: 10px
+}

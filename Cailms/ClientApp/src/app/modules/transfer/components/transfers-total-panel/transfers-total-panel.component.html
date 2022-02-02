@@ -1,0 +1,15 @@
+<div container>
+  <div section>
+    <div no-select label>Outcome:</div>
+    <div class="outcome-value">{{this.buildDisplayValue(TransferType.Outcome, total.outcome)}}</div>
+  </div>
+  <div section>
+    <div no-select label>Income:</div>
+    <div class="income-value">{{this.buildDisplayValue(TransferType.Income, total.income)}}</div>
+  </div>
+  <div no-select section>
+    <div no-select label>Difference:</div>
+    <div [ngClass]="{'income-value': this.differenceType === TransferType.Income, 'outcome-value' : this.differenceType === TransferType.Outcome }">
+      {{this.buildDisplayValue(this.differenceType, abs(this.difference))}}</div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div container>
+  <div container-header flex-center>
+    <span no-select transfers-day>{{dayTransfers.date}}</span>
+    <i *ngIf="!isTotalShown" (click)="toggleTotalPanel()" hover-toggle-button total-toggle-button nz-icon nzType="down" nzTheme="outline"></i>
+    <i *ngIf="isTotalShown" (click)="toggleTotalPanel()" total-toggle-button nz-icon nzType="up" nzTheme="outline"></i>
+  </div>
+  <app-transfers-total-panel *ngIf="isTotalShown" day-total-panel [total]="dayTotal"></app-transfers-total-panel>
+  <div transfer-record *ngFor="let transfer of dayTransfers.transfers">
+    <div transfer-info>
+      <div transfer-record-description>
+        <span transfer-item-name>{{transfer.name}}</span>
+        <div flex-center>
+          <span *ngIf="transfer.category != null" no-select transfer-item-category>{{transfer.category}}</span>
+          <nz-divider *ngIf="transfer.category != null && transfer.tags?.length > 0" nzType="vertical"></nz-divider>
+          <div *ngIf="transfer.tags?.length > 0" flex-center>
+            <nz-tag *ngFor="let tag of transfer.tags" no-select [nzColor]="'#d6d6d6'">{{tag}}</nz-tag>
+          </div>
+        </div>
+      </div>
+      <div transfer-actions>
+        <i *ngIf="transfer.description != null && transfer.description != ''" description-icon nz-tooltip [nzTooltipTitle]="transfer.description" nzTooltipPlacement="left" nz-icon nzType="info-circle" nzTheme="outline"></i>
+        <div transfer-action-button (click)="navigateToTransferEdit(transfer.id)" icon-button>
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </div>
+        <div transfer-action-button (click)="deleteTransfer(dayTransfers.date, transfer.id)" icon-button>
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </div>
+      </div>
+    </div>
+    <span
+      [ngClass]="{'income-value': transfer.type === TransferType.Income, 'outcome-value' : transfer.type === TransferType.Outcome }"
+      transfer-value>
+          {{buildDisplayValue(transfer.type, transfer.value)}}
+        </span>
+  </div>
+</div>

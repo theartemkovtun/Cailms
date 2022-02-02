@@ -1,0 +1,17 @@
+<app-background-section>
+  <div total-container>
+    <div total-values>
+      <div total-value-container>
+        <div label no-select>SPENT</div>
+        <div no-select total-value>{{data?.outcome}}</div>
+      </div>
+      <div total-value-container>
+        <div label no-select>EARNED</div>
+        <div no-select total-value>{{data?.income}}</div>
+      </div>
+    </div>
+    <div chart>
+      <p-chart type="doughnut" [data]="isNoData() ? chartDataEmpty : chartData" [options]="chartOptions"></p-chart>
+    </div>
+  </div>
+</app-background-section>

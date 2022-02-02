@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=PT+Sans:wght@700&family=Titillium+Web:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 * {
   font-family: "Inter", sans-serif;
+}
+
+body {
+  color: black;
 }
 
 [no-select] {
@@ -18,7 +23,105 @@
   display: flex;
 }
 
+[flex-center] {
+  display: flex;
+  align-items: center;
+}
+
 [flex-column] {
   display: flex;
   flex-direction: column;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cbcbcb;
+}
+
+[primary-button] {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: #1890ff;
+}
+
+[primary-button]:hover {
+  cursor: pointer;
+  background-color: darken(#1890ff, 3);
+}
+
+[primary-button] i {
+  margin-right: 10px
+}
+
+
+.ant-select-item-option {
+  padding: 10px !important;
+}
+
+.ant-picker-cell .ant-picker-cell-inner {
+  min-width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.ant-picker-calendar-header .ant-picker-calendar-mode-switch {
+  display: none;
+}
+
+
+[section-label] {
+  display: flex;
+  margin: 35px 0;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+[dark-button] {
+  display: flex;
+  align-items: center;;
+  width: fit-content;
+  border: 1px solid #f0f0f0;
+}
+
+[dark-button]:hover {
+  color: #292929;
+  border: 1px solid #484848;
+}
+
+[dark-button]:focus {
+  color: rgba(0, 0, 0, 0.65);
+  border: 1px solid #f0f0f0;
+}
+
+[dark-button] i {
+  margin-right: 5px;
+  font-size: 13px;
+  margin-top: 1px;
+}
+
+
+.explicit-overlay-dark-backdrop {
+  background: rgba(0,0,0,0.10) !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,30 @@
+<div container>
+  <button nz-button nzType="default" nzSize="large" (click)="backToStatistics()" flex-center dark-button>
+    <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+    <span>Back</span>
+  </button>
+  <span no-select section-label>Transfers</span>
+
+  <div filters>
+    <nz-range-picker [(ngModel)]="dates" nzSize="large" [nzFormat]="dateFormat" (ngModelChange)="filtersUpdated()" ></nz-range-picker>
+    <nz-select select-filter [(ngModel)]="getUserTransfersRequest.categories" (ngModelChange)="filtersUpdated()" nzSize="large" nzMode="multiple" nzPlaceHolder="Categories">
+      <nz-option *ngFor="let option of categoryOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
+    </nz-select>
+    <nz-select select-filter [(ngModel)]="getUserTransfersRequest.tags" (ngModelChange)="filtersUpdated()" nzSize="large" nzMode="multiple" nzPlaceHolder="Tags">
+      <nz-option *ngFor="let option of tagOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
+    </nz-select>
+    <button (click)="clearAllFilters()" clear-all-button [disabled]="isClearAllButtonDisabled()" nzSize="large" dark-button nz-button nzType="default">
+      <i nz-icon nzType="close-circle" nzTheme="outline"></i>
+      <span>Clear all</span>
+    </button>
+  </div>
+
+  <app-transfers-total-panel total-panel [total]="total"></app-transfers-total-panel>
+
+  <app-transfers-list [transfers]="userTransfers"></app-transfers-list>
+  <div load-more-container>
+    <button *ngIf="this.isMoreTransfers" nz-button nzType="default" nzSize="large" (click)="loadMoreTransfers()" dark-button>
+      <span>Load more</span>
+    </button>
+  </div>
+</div>

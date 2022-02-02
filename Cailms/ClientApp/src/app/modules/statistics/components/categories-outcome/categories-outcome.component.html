@@ -1,0 +1,16 @@
+<app-background-section>
+  <div *ngIf="!isNoData()" categories>
+    <div categories-list
+         (mouseleave)="showScroll = false"
+         (mouseenter)="showScroll = true"
+         [ngClass]="{'show-scrollbar' : showScroll}">
+      <app-category-label *ngFor="let categoryOutcome of categoriesOutcome; index as i" [(category)]="categoriesOutcome[i]" (categoryChange)="rebuildPie()"></app-category-label>
+    </div>
+    <div categories-pie-chart-container>
+      <p-chart #pieChart type="pie" [data]="chartData" [options]="chartOptions" ></p-chart>
+    </div>
+  </div>
+  <div no-select no-data-container *ngIf="isNoData()">
+    <img src="./assets/images/empty-pie.svg" alt="">
+  </div>
+</app-background-section>

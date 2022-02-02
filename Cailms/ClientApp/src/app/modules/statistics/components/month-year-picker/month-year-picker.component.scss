@@ -1,0 +1,64 @@
+[date-container] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+[months] {
+  margin-right: 25px;
+  display: flex;
+  border-radius: 5px;
+  background-color: #fafafa;
+  width: 100%;
+}
+
+[month] {
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%
+}
+
+[month]:not(.blocked):not(.selected-month):hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+[full-year] {
+  border-right: 1px solid #f2f2f2;
+}
+
+.selected-month {
+  box-shadow: 0 2px 8px #f0f1f2;
+  border-radius: 5px;
+  background-color: #fff;
+  font-weight: bold;
+}
+
+.blocked {
+  color: silver;
+}
+
+[year] {
+  border-radius: 5px;
+  background-color: #fafafa;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+[year-switch] {
+  margin: 7px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+[year-switch]:not(.blocked):hover {
+  color: black;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+[year-value] {
+  margin: 0 10px;
+}

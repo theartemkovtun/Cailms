@@ -1,0 +1,17 @@
+<app-background-section>
+  <div container>
+    <div *ngIf="!isNoData()" daily-line-chart>
+      <div actions>
+        <div no-select bar-type (click)="changeType(PeriodBarTypeEnum.All)" [class.selected-type]="type === PeriodBarTypeEnum.All">All</div>
+        <div no-select bar-type (click)="changeType(PeriodBarTypeEnum.Income)" [class.selected-type]="type === PeriodBarTypeEnum.Income">Income</div>
+        <div no-select bar-type (click)="changeType(PeriodBarTypeEnum.Outcome)" [class.selected-type]="type === PeriodBarTypeEnum.Outcome">Outcome</div>
+      </div>
+      <p-chart #barChart type="bar" [data]="barData" [options]="basicOptions"></p-chart>
+    </div>
+    <div no-select no-data-container *ngIf="isNoData()">
+      <img src="./assets/images/empty-bar.svg" alt="">
+    </div>
+  </div>
+</app-background-section>
+
+

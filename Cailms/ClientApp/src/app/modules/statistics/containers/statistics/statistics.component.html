@@ -1,0 +1,15 @@
+<app-month-year-picker [(month)]="month" [(year)]="year" (dateChanged)="dateChanged()"></app-month-year-picker>
+<div first-row>
+  <app-total-income-outcome [data]="this.statistics.total" ></app-total-income-outcome>
+  <app-categories-outcome categories-outcome-section [categoriesOutcome]="this.statistics.categories"></app-categories-outcome>
+</div>
+<span no-select section-label>{{ this.month == Month.Full ? 'Monthly' : 'Daily'}} Activity</span>
+<app-period-income-outcome-bar-chart [data]="periodStatistics"></app-period-income-outcome-bar-chart>
+<div transfers-header>
+  <span no-select section-label>Latest {{ this.month == Month.Full ? 'Year' : 'Month'}} Transfers</span>
+  <button nz-button nzSize="large" nzType="default" (click)="navigateToTransfers()" dark-button>
+    <span>See all transfers</span>
+    <i nz-icon nzType="arrow-right" nzTheme="outline"></i>
+  </button>
+</div>
+<app-transfers-list transfers-list [transfers]="userTransfers"></app-transfers-list>
