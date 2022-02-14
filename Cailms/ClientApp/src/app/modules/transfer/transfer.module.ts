@@ -9,11 +9,18 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import {NzButtonModule, NzDatePickerModule, NzDividerModule, NzTagModule, NzToolTipModule} from 'ng-zorro-antd';
 import { TransfersComponent } from './containers/transfers/transfers.component';
 import {TransfersListComponent} from './components/transfers-list/transfers-list.component';
 import {TransfersTotalPanelComponent} from './components/transfers-total-panel/transfers-total-panel.component';
 import { TransferListItemComponent } from './components/transfer-list-item/transfer-list-item.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import {NzToolTipModule} from 'ng-zorro-antd/tooltip';
+import {NzBadgeModule} from 'ng-zorro-antd/badge';
+import {NzDropDownModule} from 'ng-zorro-antd/dropdown';
+import {NzNoAnimationModule} from 'ng-zorro-antd/core/no-animation';
 
 @NgModule({
   declarations: [
@@ -25,22 +32,25 @@ import { TransferListItemComponent } from './components/transfer-list-item/trans
   exports: [
     TransfersListComponent
   ],
-    imports: [
-        CommonModule,
-        TransferRoutingModule,
-        NzIconModule,
-        NzInputModule,
-        NzCalendarModule,
-        NzSelectModule,
-        FormsModule,
-        NzRadioModule,
-        NzInputNumberModule,
-        ReactiveFormsModule,
-        NzDividerModule,
-        NzTagModule,
-        NzButtonModule,
-        NzToolTipModule,
-        NzDatePickerModule,
-    ]
+  imports: [
+    CommonModule,
+    TransferRoutingModule,
+    NzIconModule,
+    NzInputModule,
+    NzCalendarModule,
+    NzSelectModule,
+    FormsModule,
+    NzRadioModule,
+    NzInputNumberModule,
+    ReactiveFormsModule,
+    NzDividerModule,
+    NzTagModule,
+    NzButtonModule,
+    NzToolTipModule,
+    NzDatePickerModule,
+    NzBadgeModule,
+    NzDropDownModule,
+    NzNoAnimationModule,
+  ]
 })
 export class TransferModule { }

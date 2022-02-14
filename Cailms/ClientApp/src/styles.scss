@@ -123,5 +123,17 @@ body {
   background: rgba(0,0,0,0.10) !important;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.ant-radio-button-wrapper:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.ant-radio-button-wrapper:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  color: rgb(0 0 0 / 85%);
+  font-weight: 600;
+  background-color: #dedede;
+}

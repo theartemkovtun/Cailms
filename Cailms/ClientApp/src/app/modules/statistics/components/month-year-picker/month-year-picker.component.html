@@ -1,6 +1,6 @@
 <div date-container>
   <div months>
-    <div month no-select (click)="selectMonth(Month.Full)" [class.selected-month]="month == Month.Full" full-year>Full</div>
+    <div month no-select (click)="selectMonth(Month.Full)" [class.selected-month]="month == Month.Full" full-year>Year</div>
     <div month no-select (click)="selectMonth(Month.January)" [class.selected-month]="month == Month.January">Jan</div>
     <div month no-select (click)="selectMonth(Month.February)" [class.selected-month]="month == Month.February" [class.blocked]="this.isMonthBlocked(Month.February)">Feb</div>
     <div month no-select (click)="selectMonth(Month.March)" [class.selected-month]="month == Month.March" [class.blocked]="this.isMonthBlocked(Month.March)">Mar</div>

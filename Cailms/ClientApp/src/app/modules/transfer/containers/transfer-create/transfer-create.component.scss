@@ -4,24 +4,13 @@
   flex-direction: column;
 }
 
-[back-button] {
-  display: flex;
-  align-items: center;
-  font-size: 17px;
-  padding: 7px 20px;
-  border-radius: 5px;
+[section] {
+  padding: 25px 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 50px #f0f1f2;
   width: fit-content;
-  margin-top: 15px
-}
-
-[back-button]:hover {
-  background-color: #fafafa;
-  cursor: pointer;
-}
-
-[back-button] i {
-  margin-right: 15px;
-  font-size: 14px;
+  height: fit-content;
 }
 
 [form] {
@@ -29,9 +18,11 @@
 }
 
 [calendar] {
-  padding: 15px;
-  border: 1px solid #f0f0f0;
-  width: 450px;
+  padding: 25px;
+}
+
+[date-pick-section] {
+  margin-right: 25px
 }
 
 
@@ -59,14 +50,10 @@
 }
 
 [inputs] {
-  width: 100%;
-  margin-left: 50px;
+  width: 700px;
   display: flex;
   flex-direction: column;
-}
-
-[form] {
-  margin-top: 50px
+  padding: 30px
 }
 
 [actions] {

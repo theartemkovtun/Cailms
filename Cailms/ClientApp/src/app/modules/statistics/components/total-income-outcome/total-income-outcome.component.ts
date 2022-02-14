@@ -34,11 +34,9 @@ export class TotalIncomeOutcomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
   ngOnChanges(changes: SimpleChanges) {
-
     this.chartData = {
       labels: ['Earned', 'Spent'],
       datasets: [

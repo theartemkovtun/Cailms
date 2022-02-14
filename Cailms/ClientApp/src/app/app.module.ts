@@ -17,6 +17,7 @@ import {NzAvatarModule} from 'ng-zorro-antd/avatar';
 import {NzIconModule} from 'ng-zorro-antd/icon';
 import {TransferModule} from './modules/transfer/transfer.module';
 import {ProfileModule} from './modules/profile/profile.module';
+import { LeftSiderLayoutComponent } from './_layout/left-sider-layout/left-sider-layout.component';
 
 registerLocaleData(en);
 
@@ -24,7 +25,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     HeaderLayoutComponent,
-    NoLayoutComponent
+    NoLayoutComponent,
+    LeftSiderLayoutComponent
   ],
   imports: [
     BrowserModule,

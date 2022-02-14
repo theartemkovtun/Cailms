@@ -18,7 +18,6 @@
         </div>
       </div>
       <div transfer-actions>
-        <i *ngIf="transfer.description != null && transfer.description != ''" description-icon nz-tooltip [nzTooltipTitle]="transfer.description" nzTooltipPlacement="left" nz-icon nzType="info-circle" nzTheme="outline"></i>
         <div transfer-action-button (click)="navigateToTransferEdit(transfer.id)" icon-button>
           <i nz-icon nzType="edit" nzTheme="outline"></i>
         </div>

@@ -34,7 +34,7 @@ export class TransferCreateComponent implements OnInit {
 
     if (this.transferId != null) {
       this.transferService.getTransfer(this.transferId).subscribe(transfer => {
-        this.date = transfer.date;
+        this.date = new Date(transfer.date);
         this.form = this.formBuilder.group({
           name: [transfer.name, [Validators.required]],
           value: [transfer.value, [Validators.required]],

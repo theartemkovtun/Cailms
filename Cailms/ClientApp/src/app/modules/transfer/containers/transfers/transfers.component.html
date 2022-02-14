@@ -1,23 +1,15 @@
 <div container>
-  <button nz-button nzType="default" nzSize="large" (click)="backToStatistics()" flex-center dark-button>
-    <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
-    <span>Back</span>
-  </button>
-  <span no-select section-label>Transfers</span>
-
-  <div filters>
-    <nz-range-picker [(ngModel)]="dates" nzSize="large" [nzFormat]="dateFormat" (ngModelChange)="filtersUpdated()" ></nz-range-picker>
-    <nz-select select-filter [(ngModel)]="getUserTransfersRequest.categories" (ngModelChange)="filtersUpdated()" nzSize="large" nzMode="multiple" nzPlaceHolder="Categories">
-      <nz-option *ngFor="let option of categoryOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
-    </nz-select>
-    <nz-select select-filter [(ngModel)]="getUserTransfersRequest.tags" (ngModelChange)="filtersUpdated()" nzSize="large" nzMode="multiple" nzPlaceHolder="Tags">
-      <nz-option *ngFor="let option of tagOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
-    </nz-select>
-    <button (click)="clearAllFilters()" clear-all-button [disabled]="isClearAllButtonDisabled()" nzSize="large" dark-button nz-button nzType="default">
-      <i nz-icon nzType="close-circle" nzTheme="outline"></i>
-      <span>Clear all</span>
-    </button>
+  <div header>
+    <span no-select section-label>Transfers</span>
+    <nz-badge [nzDot]="false">
+      <button nz-dropdown [nzPlacement]="'bottomRight'" nzTrigger="click" [nzDropdownMenu]="menu" filters-button dark-button>
+        <i nz-icon nzType="filter" nzTheme="outline"></i>
+        <span>Filters</span>
+      </button>
+    </nz-badge>
   </div>
+
+
 
   <app-transfers-total-panel total-panel [total]="total"></app-transfers-total-panel>
 
@@ -28,3 +20,24 @@
     </button>
   </div>
 </div>
+
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div filters>
+    <span no-select filter-label>Dates</span>
+    <nz-range-picker filter [(ngModel)]="dates" nzSize="large" [nzFormat]="dateFormat" (ngModelChange)="filtersUpdated()" ></nz-range-picker>
+    <span no-select filter-label>Categories</span>
+    <nz-select filter [(ngModel)]="selectedCategories" (ngModelChange)="filtersUpdated()" nzSize="large" nzMode="multiple" nzPlaceHolder="Categories">
+      <nz-option *ngFor="let option of categoryOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
+    </nz-select>
+    <span no-select filter-label>Tags</span>
+    <nz-select filter [(ngModel)]="selectedTags" (ngModelChange)="filtersUpdated()" nzSize="large" nzMode="multiple" nzPlaceHolder="Tags">
+      <nz-option *ngFor="let option of tagOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
+    </nz-select>
+    <div filter-actions>
+      <button (click)="clearAllFilters()" [disabled]="isClearAllButtonDisabled()" nzSize="large" dark-button nz-button nzType="default">
+        <span>Clear</span>
+      </button>
+    </div>
+  </div>
+</nz-dropdown-menu>

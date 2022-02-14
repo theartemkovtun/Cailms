@@ -1,10 +1,34 @@
 <div container>
   <span logo no-select>Cailms</span>
   <span login-label no-select>Log In</span>
-  <button (click)="loginWithGoogle()" login-button>
+  <div sign-up-contianer>
+    <span no-select>New user?</span>
+    <a [routerLink]="['/', 'signup']">Create Account</a>
+  </div>
+  <form nz-form="" form [formGroup]="loginForm">
+    <nz-form-item>
+      <nz-form-control [nzValidateStatus]="isLoginFailed ? 'error' : null">
+        <input formControlName="email" nz-input placeholder="Email" nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzValidateStatus]="isLoginFailed ? 'error' : null">
+        <input formControlName="password" type="password" nz-input placeholder="Password" nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
+    <button (click)="login()" login-button nz-button nzSize="large" nzType="primary">
+      <span>Continue</span>
+      <i nz-icon nzType="arrow-right" nzTheme="outline"></i>
+    </button>
+  </form>
+  <nz-divider nzText="or"></nz-divider>
+  <button (click)="loginWithGoogle()" nz-button nzSize="large" nzType="default" external-login-button>
     <img src="./assets/images/google.svg" alt="">
     <span>Continue with Google</span>
   </button>
+  <div login-failed-container>
+    <span *ngIf="isLoginFailed">Invalid username or password</span>
+  </div>
 </div>
 
 

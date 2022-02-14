@@ -8,6 +8,7 @@
         <SpaRoot>ClientApp\</SpaRoot> 
         <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
         <BuildServerSideRenderer>false</BuildServerSideRenderer>
+        <UserSecretsId>a9ca4bdf-f33e-4395-a165-feb42480a08e</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>

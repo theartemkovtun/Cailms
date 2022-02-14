@@ -8,11 +8,17 @@
         <PackageReference Include="AutoMapper" Version="10.1.1" />
         <PackageReference Include="FluentValidation" Version="9.0.0-preview3" />
         <PackageReference Include="MediatR" Version="9.0.0" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.5.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Cailms.Common\Cailms.Common.csproj" />
       <ProjectReference Include="..\Cailms.Domain\Cailms.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Requests\Users\Commands\RefreshJwtToken" />
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,19 @@
+<div container>
+  <div sider>
+    <img logo src="./assets/images/cailms.png">
+    <div menu>
+      <i (click)="navigate('statistics')" [class.selected-menu]="isActive('statistics')" menu-icon nz-icon nzType="pie-chart" nzTheme="outline"></i>
+      <i (click)="navigate('transfers')" [class.selected-menu]="isActive('transfers')" menu-icon nz-icon nzType="unordered-list" nzTheme="outline"></i>
+      <i (click)="navigate('transfer')" [class.selected-menu]="isActive('transfer')" menu-icon nz-icon nzType="plus" nzTheme="outline"></i>
+    </div>
+    <div menu>
+      <nz-avatar avatar [nzSize]="30" [nzSrc]="this.user?.photoUrl" nzIcon="user"></nz-avatar>
+      <i (click)="logout()" logout-button nz-icon nzType="logout" nzTheme="outline"></i>
+    </div>
+  </div>
+  <div content-container>
+    <div content>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

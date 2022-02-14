@@ -2,9 +2,11 @@
   <div container>
     <div *ngIf="!isNoData()" daily-line-chart>
       <div actions>
-        <div no-select bar-type (click)="changeType(PeriodBarTypeEnum.All)" [class.selected-type]="type === PeriodBarTypeEnum.All">All</div>
-        <div no-select bar-type (click)="changeType(PeriodBarTypeEnum.Income)" [class.selected-type]="type === PeriodBarTypeEnum.Income">Income</div>
-        <div no-select bar-type (click)="changeType(PeriodBarTypeEnum.Outcome)" [class.selected-type]="type === PeriodBarTypeEnum.Outcome">Outcome</div>
+        <nz-radio-group [(ngModel)]="type" (ngModelChange)="rebuildBarChart()" nzButtonStyle="solid">
+          <label nz-radio-button [nzValue]="PeriodBarTypeEnum.All">All</label>
+          <label nz-radio-button [nzValue]="PeriodBarTypeEnum.Income">Income</label>
+          <label nz-radio-button [nzValue]="PeriodBarTypeEnum.Outcome">Outcome</label>
+        </nz-radio-group>
       </div>
       <p-chart #barChart type="bar" [data]="barData" [options]="basicOptions"></p-chart>
     </div>

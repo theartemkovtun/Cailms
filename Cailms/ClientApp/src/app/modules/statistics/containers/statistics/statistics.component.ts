@@ -21,7 +21,6 @@ export class StatisticsComponent implements OnInit {
   year: number;
   statistics: UserStatistics = new UserStatistics();
   periodStatistics: Array<PeriodIncomeOutcome>;
-  userTransfers: Array<DayTransfers> = [];
   getUserTransfersRequest = new GetTransfersRequest(1, 3);
 
   constructor(public statisticsService: StatisticsService,
@@ -47,7 +46,6 @@ export class StatisticsComponent implements OnInit {
     const [startDate, endDate] = this.getCurrentPeriodStartAndEndDate();
     this.getUserTransfersRequest.startDate = startDate;
     this.getUserTransfersRequest.endDate = endDate;
-    this.transferService.getUserTransfers(this.getUserTransfersRequest).subscribe(data => this.userTransfers = data.items);
   }
 
   dateChanged = () => {

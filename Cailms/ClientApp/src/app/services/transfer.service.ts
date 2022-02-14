@@ -2,10 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Transfer} from '../modules/transfer/models/transfer.model';
-import {DayTransfers} from '../modules/statistics/models/dayTransfers.model';
 import {SingleValue} from '../modules/transfer/models/singleValue.model';
 import {GetTransfersRequest} from '../modules/transfer/models/getTransfersRequest.model';
-import {IsMorePagedCollection} from '../modules/transfer/models/isMorePagedCollection.model';
 import {TransfersListModel} from '../modules/transfer/models/transfersList.model';
 
 @Injectable({
@@ -15,12 +13,20 @@ export class TransferService {
 
   constructor(private http: HttpClient) { }
 
+  private static yyyymmddDate(date: Date) {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    return [date.getFullYear(), '-', (month > 9 ? '' : '0') + month, '-', (day > 9 ? '' : '0') + day].join('');
+  }
+
+
   addTransfer(transfer: Transfer): Observable<string>{
     return this.http.post<string>(`/api/transfers`, {
       name: transfer.name,
       value: transfer.value,
       description: transfer.description,
-      date: transfer.date,
+      date: TransferService.yyyymmddDate(transfer.date),
       category: transfer.category,
       type: transfer.type,
       tags: transfer.tags
@@ -33,7 +39,7 @@ export class TransferService {
       name: transfer.name,
       value: transfer.value,
       description: transfer.description,
-      date: transfer.date,
+      date: TransferService.yyyymmddDate(transfer.date),
       category: transfer.category,
       type: transfer.type,
       tags: transfer.tags

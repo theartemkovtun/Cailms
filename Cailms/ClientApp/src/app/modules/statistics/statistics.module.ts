@@ -14,8 +14,10 @@ import { TotalIncomeOutcomeComponent } from './components/total-income-outcome/t
 import { CategoriesOutcomeComponent } from './components/categories-outcome/categories-outcome.component';
 import { PeriodIncomeOutcomeBarChartComponent } from './components/period-income-outcome-bar-chart/period-income-outcome-bar-chart.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import {NzDividerModule} from 'ng-zorro-antd';
 import {TransferModule} from '../transfer/transfer.module';
+import {FormsModule} from '@angular/forms';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {TransferModule} from '../transfer/transfer.module';
     ChartModule,
     NzTagModule,
     NzDividerModule,
-    TransferModule
+    TransferModule,
+    NzRadioModule,
+    FormsModule
   ]
 })
 export class StatisticsModule { }

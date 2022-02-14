@@ -1,61 +1,62 @@
 <div *ngIf="isDataLoaded" container>
-  <button nz-button nzType="default" nzSize="large" (click)="backToStatistics()" dark-button>
-    <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
-    <span>Back</span>
-  </button>
+  <span no-select section-label>Add Transfer</span>
   <div form [formGroup]="form">
-    <div date-pick>
-      <div form-input-section>
-        <nz-calendar [(nzValue)]="this.date" calendar [nzFullscreen]="false" ></nz-calendar>
+    <div section date-pick-section>
+      <div date-pick>
+        <div form-input-section>
+          <nz-calendar [(nzValue)]="this.date" calendar [nzFullscreen]="false" ></nz-calendar>
+        </div>
       </div>
     </div>
-    <div inputs>
-      <nz-radio-group type-switch nzSize="large" [(ngModel)]="type" [ngModelOptions]="{standalone: true}" nzButtonStyle="solid">
-        <label nz-radio-button [nzValue]="IncomeOutcomeType.Income">
-          <div type-label>
-            <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
-            <span>Income</span>
-          </div>
-        </label>
-        <label nz-radio-button [nzValue]="IncomeOutcomeType.Outcome">
-          <div type-label>
-            <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
-            <span>Outcome</span>
-          </div>
-        </label>
-      </nz-radio-group>
-      <div form-input-section>
-        <span form-input-label>Name</span>
-        <input formControlName="name" nzSize="large" nz-input placeholder="..." />
-      </div>
-      <div form-input-section>
-        <span form-input-label>{{this.type == IncomeOutcomeType.Income ? 'Value' : 'Price'}}</span>
-        <nz-input-number
-          formControlName="value"
-          price-input
-          nzSize="large"
-          [nzMin]="0.01"
-          [nzStep]="0.01"
-          nzPlaceHolder="..."
-        ></nz-input-number>
-      </div>
-      <div form-input-section>
-        <span form-input-label>Description</span>
-        <textarea formControlName="description" nzSize ="large" nz-input placeholder="..." [nzAutosize]="{ minRows: 5, maxRows: 5 }"></textarea>
-      </div>
-      <div *ngIf="this.type == IncomeOutcomeType.Outcome" form-input-section>
-        <span form-input-label>Category</span>
+    <div section>
+      <div inputs>
+        <nz-radio-group type-switch nzSize="large" [(ngModel)]="type" [ngModelOptions]="{standalone: true}" nzButtonStyle="solid">
+          <label nz-radio-button [nzValue]="IncomeOutcomeType.Income">
+            <div type-label>
+              <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
+              <span>Income</span>
+            </div>
+          </label>
+          <label nz-radio-button [nzValue]="IncomeOutcomeType.Outcome">
+            <div type-label>
+              <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
+              <span>Outcome</span>
+            </div>
+          </label>
+        </nz-radio-group>
+        <div form-input-section>
+          <span form-input-label>Name*</span>
+          <input formControlName="name" nzSize="large" nz-input placeholder="..." />
+        </div>
+        <div form-input-section>
+          <span form-input-label>{{this.type == IncomeOutcomeType.Income ? 'Value' : 'Price'}}*</span>
+          <nz-input-number
+            formControlName="value"
+            price-input
+            nzSize="large"
+            [nzMin]="0.01"
+            [nzStep]="0.01"
+            nzPlaceHolder="..."
+          ></nz-input-number>
+        </div>
+        <div form-input-section>
+          <span form-input-label>Description</span>
+          <textarea formControlName="description" nzSize ="large" nz-input placeholder="..." [nzAutosize]="{ minRows: 5, maxRows: 5 }"></textarea>
+        </div>
+        <div *ngIf="this.type == IncomeOutcomeType.Outcome" form-input-section>
+          <span form-input-label>Category*</span>
 
-        <nz-select [(ngModel)]="category" [ngModelOptions]="{standalone: true}" nzShowSearch nzAllowClear nzSize="large">
-          <nz-option *ngFor="let option of categoryOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
-        </nz-select>
-      </div>
-      <div form-input-section>
-        <span form-input-label>Tags</span>
+          <nz-select [(ngModel)]="category" [ngModelOptions]="{standalone: true}" nzShowSearch nzAllowClear nzSize="large">
+            <nz-option *ngFor="let option of categoryOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
+          </nz-select>
+        </div>
+        <div form-input-section>
+          <span form-input-label>Tags</span>
 
-        <nz-select [(ngModel)]="tags" [ngModelOptions]="{standalone: true}" nzSize="large" nzMode="tags">
-          <nz-option *ngFor="let option of tagsOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
-        </nz-select>
+          <nz-select [(ngModel)]="tags" [ngModelOptions]="{standalone: true}" nzSize="large" nzMode="tags">
+            <nz-option *ngFor="let option of tagsOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
+          </nz-select>
+        </div>
       </div>
     </div>
   </div>

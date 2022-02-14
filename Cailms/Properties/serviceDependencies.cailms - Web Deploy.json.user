@@ -5,5 +5,31 @@
       "restoreTime": "2021-12-31T18:39:40.2642934Z"
     }
   },
-  "parameters": {}
+  "parameters": {
+    "cailms.resourceGroupName": {
+      "Name": "cailms.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "dev-filps"
+    },
+    "cailms.subscriptionId": {
+      "Name": "cailms.subscriptionId",
+      "Type": "subscription",
+      "Value": "518e89f6-a6e3-4aa0-abdb-381cfa3c27e4"
+    },
+    "cailms.resourceName": {
+      "Name": "cailms.resourceName",
+      "Type": null,
+      "Value": "cailms"
+    },
+    "cailms.resourceGroupLocation": {
+      "Name": "cailms.resourceGroupLocation",
+      "Type": null,
+      "Value": "germanywestcentral"
+    },
+    "subscriptionId": {
+      "Name": "subscriptionId",
+      "Type": "subscription",
+      "Value": "518e89f6-a6e3-4aa0-abdb-381cfa3c27e4"
+    }
+  }
 }

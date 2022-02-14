@@ -14,5 +14,14 @@
             public const string GetUserTags = "main.procGetUserTags";
             public const string GetTransfer = "main.procGetTransfer";
         }
+
+        public static class User
+        {
+            public const string AddUser = "user.procAddUser";
+            public const string GetUser = "user.procGetUser";
+            public const string DeleteRefreshToken = "user.procDeleteRefreshToken";
+            public const string AddRefreshToken = "user.procAddRefreshToken";
+            public const string ValidateRefreshToken = "user.procValidateRefreshToken";
+        }
     }
 }

@@ -21,7 +21,7 @@ export class TransfersTotalPanelComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.difference = changes.total.currentValue.income - changes.total.currentValue.outcome;
+    this.difference = +(changes.total.currentValue.income - changes.total.currentValue.outcome).toFixed(2);
     if (this.difference !== 0) {
       this.differenceType = this.difference > 0 ? TransferType.Income : TransferType.Outcome;
     }

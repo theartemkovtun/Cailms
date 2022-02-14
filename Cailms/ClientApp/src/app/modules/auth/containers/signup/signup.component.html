@@ -1,0 +1,19 @@
+<div container>
+  <span logo no-select>Cailms</span>
+  <span login-label no-select>Sign Up</span>
+  <div sign-up-contianer>
+    <span no-select>Have an account?</span>
+    <a [routerLink]="['/', 'login']">Log in</a>
+  </div>
+  <div form>
+    <input nz-input placeholder="Email" nzSize="large" />
+    <input type="password" nz-input placeholder="Password" nzSize="large" />
+    <input type="password" nz-input placeholder="Repeat Password" nzSize="large" />
+    <button login-button nz-button nzSize="large" nzType="primary">
+      <span>Continue</span>
+      <i nz-icon nzType="arrow-right" nzTheme="outline"></i>
+    </button>
+  </div>
+</div>
+
+

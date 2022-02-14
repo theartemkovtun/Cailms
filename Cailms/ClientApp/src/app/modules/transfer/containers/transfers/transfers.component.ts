@@ -16,6 +16,8 @@ export class TransfersComponent implements OnInit {
   dates = [];
   categoryOptions = [];
   tagOptions = [];
+  selectedCategories = [];
+  selectedTags = [];
 
   total = new TotalIncomeOutcome();
   queryParams: Params;
@@ -31,9 +33,8 @@ export class TransfersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setFiltersByQueryParams();
+    this.clearAllFilters();
     this.getFilterOptions();
-    this.getUserTransfers();
   }
 
   getUserTransfers = () => {
@@ -66,8 +67,8 @@ export class TransfersComponent implements OnInit {
 
   clearAllFilters = () => {
     this.dates = [];
-    this.getUserTransfersRequest.categories = [];
-    this.getUserTransfersRequest.tags = [];
+    this.selectedCategories = [];
+    this.selectedTags = [];
     this.filtersUpdated();
   }
 
@@ -75,12 +76,13 @@ export class TransfersComponent implements OnInit {
     this.setRequestDatesFilters();
     this.getUserTransfersRequest.page = 1;
     this.getUserTransfersRequest.take = 10;
+    this.getUserTransfersRequest.categories = this.selectedCategories;
+    this.getUserTransfersRequest.tags = this.selectedTags;
     this.userTransfers = [];
     this.getUserTransfers();
   }
 
   setFiltersByQueryParams = () => {
-    this.dates = [new Date(this.queryParams.startDate), new Date(this.queryParams.endDate)];
     this.setRequestDatesFilters();
   }
 

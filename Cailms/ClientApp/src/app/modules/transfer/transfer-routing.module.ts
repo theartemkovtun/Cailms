@@ -4,11 +4,12 @@ import {HeaderLayoutComponent} from '../../_layout/header-layout/header-layout.c
 import {TransferCreateComponent} from './containers/transfer-create/transfer-create.component';
 import {TransfersComponent} from './containers/transfers/transfers.component';
 import {AuthGuard} from '../../shared/guards/auth.guard';
+import {LeftSiderLayoutComponent} from '../../_layout/left-sider-layout/left-sider-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HeaderLayoutComponent,
+    component: LeftSiderLayoutComponent,
     children: [
       {
         path: 'transfer',

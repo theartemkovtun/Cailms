@@ -7,10 +7,13 @@ import {environment} from '../../../environments/environment';
 @Injectable()
 export class AuthTokenInterceptor implements HttpInterceptor {
 
-  constructor(private authService: SocialAuthService) {
+  constructor(private socialAuthService: SocialAuthService) {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+    request = this.buildUrl(request);
+
     const token = localStorage.getItem('token');
     if (token != null) {
       request = this.addToken(request, token);
@@ -19,10 +22,15 @@ export class AuthTokenInterceptor implements HttpInterceptor {
     return next.handle(request);
   }
 
+  private buildUrl = (request: HttpRequest<any>) => {
+    return request.clone({
+      url: environment.apiUrl + request.url,
+    });
+  }
+
   private addToken = (request: HttpRequest<any>, token: string) => {
     return request.clone({
       withCredentials: true,
-      url: environment.apiUrl + request.url,
       setHeaders: {
         Authorization: `Bearer ${token}`
       }
@@ -30,8 +38,8 @@ export class AuthTokenInterceptor implements HttpInterceptor {
   }
 
   private handle401Error = (request: HttpRequest<any>, next: HttpHandler) => {
-    return this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID).then(_ => {
-      this.authService.authState.subscribe((user) => {
+    return this.socialAuthService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID).then(_ => {
+      this.socialAuthService.authState.subscribe((user) => {
         if (user !== null) {
           localStorage.setItem('token', user.idToken);
           return next.handle(this.addToken(request, user.idToken));

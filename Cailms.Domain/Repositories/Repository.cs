@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Cailms.Domain.Repositories
 {
-public class Repository
+    public class Repository
     {
         protected string ConnectionString { get; }
         

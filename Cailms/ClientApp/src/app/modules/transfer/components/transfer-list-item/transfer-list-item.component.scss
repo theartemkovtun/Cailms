@@ -2,8 +2,10 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #f0f0f0;
-  padding: 15px;
-  border-radius: 3px;
+  padding: 25px 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 50px #f0f1f2;
 }
 
 [container-header] {
@@ -20,6 +22,7 @@
 [total-toggle-button] {
   cursor: pointer;
 }
+
 
 [hover-toggle-button] {
   display: none;
@@ -38,14 +41,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:10px;
+  padding: 8px 15px;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
 }
 
 [transfer-record]:hover {
-  border: 1px solid #f0f0f0;
-  padding: 10px 15px;
+  background-color: #fafafa;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 [transfer-info] {
@@ -80,7 +84,7 @@
 }
 
 [icon-button]:hover {
-  background-color: #f6f6f6;
+  background-color: #eeeeee;
 }
 
 [description-icon] {
@@ -95,9 +99,7 @@
 }
 
 [transfer-value] {
-  font-weight: bold;
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 17px;
+  font-size: 14px;
   width: 100px;
   display: flex;
   justify-content: flex-end;
@@ -105,7 +107,7 @@
 }
 
 [transfer-item-name] {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 [transfer-item-category] {

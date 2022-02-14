@@ -28,7 +28,7 @@ namespace Cailms.Domain.Repositories
                 model.Month,
                 model.Year,
                 type = (int)model.Type,
-                tags = string.Join(',', model.Tags)
+                tags = model.Tags.ToSqlEnumerableParameter()
             });
         }
 

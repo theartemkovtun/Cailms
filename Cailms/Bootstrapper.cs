@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Reflection;
 using AutoMapper;
+using Cailms.Application.Options;
 using Cailms.Application.Requests.Transfers.Commands.AddTransfer;
+using Cailms.Application.Requests.Users.Commands.LoginUser;
+using Cailms.Application.Requests.Users.Commands.SignupUser;
 using Cailms.Domain.Configurations;
 using Cailms.Domain.Repositories;
 using Cailms.Domain.Repositories.Contracts;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -50,12 +54,14 @@ namespace Cailms
             
             services.BindOptions(configuration);
             services.AddRepositories();
+            services.AddValidators();
             services.AddEngines();
         }
         
         private static void BindOptions(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<DatabaseConfiguration>(configuration.GetSection("DatabaseConfiguration"));
+            services.Configure<AuthorizationOptions>(configuration.GetSection("AuthorizationOptions"));
         }
 
         private static void AddEngines(this IServiceCollection services)
@@ -66,6 +72,13 @@ namespace Cailms
         {
             services.AddScoped<ITransferRepository, TransferRepository>();
             services.AddScoped<IStatisticsRepository, StatisticsRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+        }
+
+        private static void AddValidators(this IServiceCollection services)
+        {
+            services.AddTransient<IValidator<SignupUserCommand>, SignupUserCommandValidator>();
+            services.AddTransient<IValidator<LoginUserCommand>, LoginUserCommandValidator>();
         }
     }
 }

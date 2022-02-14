@@ -61,6 +61,9 @@
     <Folder Include="main\Stored Procedures\" />
     <Folder Include="Security\" />
     <Folder Include="DataPopulate\" />
+    <Folder Include="user\" />
+    <Folder Include="user\Tables\" />
+    <Folder Include="user\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="main\Tables\TransferTag.sql" />
@@ -78,6 +81,14 @@
     <Build Include="main\Stored Procedures\procGetUserStatistics.sql" />
     <Build Include="Security\main.sql" />
     <Build Include="main\Tables\Category.sql" />
+    <Build Include="user\Tables\RefreshToken.sql" />
+    <Build Include="user\Tables\User.sql" />
+    <Build Include="user\Stored Procedures\procGetUser.sql" />
+    <Build Include="user\Stored Procedures\procDeleteRefreshToken.sql" />
+    <Build Include="user\Stored Procedures\procValidateRefreshToken.sql" />
+    <Build Include="user\Stored Procedures\procAddRefreshToken.sql" />
+    <Build Include="user\Stored Procedures\procAddUser.sql" />
+    <Build Include="Security\user.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="DataPopulation.PostDeployment.sql" />

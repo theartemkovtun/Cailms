@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { UserProfileComponent } from './containers/user-profile/user-profile.component';
-import {NzButtonModule, NzIconModule} from 'ng-zorro-antd';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 
 @NgModule({

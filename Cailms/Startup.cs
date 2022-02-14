@@ -63,18 +63,15 @@ namespace Cailms
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cailms API V1");
             });
 
-            if (!env.IsDevelopment())
+            app.UseSpa(spa =>
             {
-                app.UseSpa(spa =>
-                {
-                    spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "ClientApp";
 
-                    if (env.IsDevelopment())
-                    {
-                        spa.UseAngularCliServer(npmScript: "start");
-                    }
-                });
-            }
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
         }
     }
 }
