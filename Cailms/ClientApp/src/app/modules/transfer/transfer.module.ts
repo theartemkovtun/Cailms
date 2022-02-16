@@ -21,6 +21,9 @@ import {NzToolTipModule} from 'ng-zorro-antd/tooltip';
 import {NzBadgeModule} from 'ng-zorro-antd/badge';
 import {NzDropDownModule} from 'ng-zorro-antd/dropdown';
 import {NzNoAnimationModule} from 'ng-zorro-antd/core/no-animation';
+import { ValuesSwitchComponent } from './components/values-switch/values-switch.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import {NzNoAnimationModule} from 'ng-zorro-antd/core/no-animation';
     TransfersComponent,
     TransfersListComponent,
     TransfersTotalPanelComponent,
-    TransferListItemComponent],
+    TransferListItemComponent,
+    ValuesSwitchComponent,
+    CalendarComponent],
   exports: [
     TransfersListComponent
   ],
@@ -51,6 +56,7 @@ import {NzNoAnimationModule} from 'ng-zorro-antd/core/no-animation';
     NzBadgeModule,
     NzDropDownModule,
     NzNoAnimationModule,
+    NzNotificationModule
   ]
 })
 export class TransferModule { }

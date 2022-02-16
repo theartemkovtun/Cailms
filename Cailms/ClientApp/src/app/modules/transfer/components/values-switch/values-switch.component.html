@@ -1,0 +1,18 @@
+<div container>
+  <i
+    [class.blocked]="isPrevValueSwitchBlocked()"
+    (click)="prevValue()"
+    switch-icon
+    nz-icon
+    nzType="left"
+    nzTheme="outline"></i>
+  <span no-select>{{value}}</span>
+  <i
+    [class.blocked]="isNextValueSwitchBlocked()"
+    (click)="nextValue()"
+    switch-icon
+    nz-icon
+    nzType="right"
+    nzTheme="outline"
+  ></i>
+</div>

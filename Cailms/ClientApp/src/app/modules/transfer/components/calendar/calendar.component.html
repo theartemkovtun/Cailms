@@ -1,0 +1,8 @@
+<div container>
+  <div calendar-header>
+    <i (click)="setToToday()" nz-tooltip nzTooltipTitle="Today" nzTooltipPlacement="top" today-icon nz-icon nzType="calendar" nzTheme="outline"></i>
+    <app-values-switch (valueChange)="monthChanged($event)" [values]="months" [(value)]="currentMonth"></app-values-switch>
+    <app-values-switch (valueChange)="yearChanged($event)" [values]="years" [(value)]="currentYear"></app-values-switch>
+  </div>
+  <nz-calendar no-select [(ngModel)]="this.date" (ngModelChange)="calendarDateChange()" [nzFullscreen]="false" ></nz-calendar>
+</div>

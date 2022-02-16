@@ -20,7 +20,22 @@
   align-items: center;
   justify-content: flex-end;
   margin: 25px 0;
+  height: 32px;
+  width: 100%;
 }
+
+[type-switch] {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+[container]:hover [type-switch] {
+  visibility: visible;
+  opacity: 1;
+}
+
+
 
 [actions] [bar-type] {
   margin-left: 10px;

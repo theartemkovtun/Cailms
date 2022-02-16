@@ -3,14 +3,12 @@
   <div form [formGroup]="form">
     <div section date-pick-section>
       <div date-pick>
-        <div form-input-section>
-          <nz-calendar [(nzValue)]="this.date" calendar [nzFullscreen]="false" ></nz-calendar>
-        </div>
+        <app-calendar [(date)]="date"></app-calendar>
       </div>
     </div>
     <div section>
       <div inputs>
-        <nz-radio-group type-switch nzSize="large" [(ngModel)]="type" [ngModelOptions]="{standalone: true}" nzButtonStyle="solid">
+        <nz-radio-group type-switch [(ngModel)]="type" [ngModelOptions]="{standalone: true}" nzButtonStyle="solid">
           <label nz-radio-button [nzValue]="IncomeOutcomeType.Income">
             <div type-label>
               <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
@@ -26,11 +24,12 @@
         </nz-radio-group>
         <div form-input-section>
           <span form-input-label>Name*</span>
-          <input formControlName="name" nzSize="large" nz-input placeholder="..." />
+          <input background-input formControlName="name" nzSize="large" nz-input placeholder="..." />
         </div>
         <div form-input-section>
           <span form-input-label>{{this.type == IncomeOutcomeType.Income ? 'Value' : 'Price'}}*</span>
           <nz-input-number
+            background-input
             formControlName="value"
             price-input
             nzSize="large"
@@ -41,7 +40,7 @@
         </div>
         <div form-input-section>
           <span form-input-label>Description</span>
-          <textarea formControlName="description" nzSize ="large" nz-input placeholder="..." [nzAutosize]="{ minRows: 5, maxRows: 5 }"></textarea>
+          <textarea background-input formControlName="description" nzSize ="large" nz-input placeholder="..." [nzAutosize]="{ minRows: 5, maxRows: 5 }"></textarea>
         </div>
         <div *ngIf="this.type == IncomeOutcomeType.Outcome" form-input-section>
           <span form-input-label>Category*</span>
@@ -61,7 +60,7 @@
     </div>
   </div>
   <div actions>
-    <button (click)="createTransfer()" primary-button>
+    <button (click)="createTransfer()" nz-button nzType="default" default-button>
       <i *ngIf="transferId == null" nz-icon nzType="plus" nzTheme="outline"></i>
       <i *ngIf="transferId != null" nz-icon nzType="check" nzTheme="outline"></i>
       <span>{{this.transferId == null ? 'Create' : 'Update'}}</span>

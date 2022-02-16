@@ -22,10 +22,6 @@
   align-items: center;
 }
 
-[filters-button] i {
-  margin-right: 5px;
-  margin-bottom: 2px;
-}
 
 [load-more-container] {
   display:flex;
@@ -42,6 +38,13 @@
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 50px #f0f1f2;
+  margin-bottom: 50px;
+  border: 1px solid #f0f0f0;
+}
+
+[filters-inputs] {
+  display: flex;
+  flex-direction: column;
 }
 
 [filter-label] {
@@ -53,7 +56,7 @@
 }
 
 [filter] {
-  width: 432px;
+  width: 450px;
   margin-bottom: 20px
 }
 

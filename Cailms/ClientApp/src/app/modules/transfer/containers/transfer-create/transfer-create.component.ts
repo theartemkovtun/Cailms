@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {TransferType} from '../../models/transferType.enum';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {TransferService} from '../../../../services/transfer.service';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-transfer-create',
@@ -26,12 +27,12 @@ export class TransferCreateComponent implements OnInit {
   constructor(public router: Router,
               private formBuilder: FormBuilder,
               private transferService: TransferService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private notification: NzNotificationService) {
     this.transferId = this.activatedRoute.snapshot.params.transferId;
   }
 
   ngOnInit(): void {
-
     if (this.transferId != null) {
       this.transferService.getTransfer(this.transferId).subscribe(transfer => {
         this.date = new Date(transfer.date);
@@ -75,12 +76,23 @@ export class TransferCreateComponent implements OnInit {
     };
     if (this.transferId == null) {
       this.transferService.addTransfer(transfer).subscribe(_ => {
+        this.notification
+          .success(
+            'Transfer has been added',
+            `${transfer.name} on ${transfer.date.toISOString().slice(0, 10)} for ${transfer.value}`
+          );
         this.resetForm();
       });
     }
     else {
       this.transferService.updateTransfer(transfer).subscribe(_ => {
+        this.notification
+          .success(
+            'Transfer has been updated',
+            `${transfer.name} on ${transfer.date.toISOString().slice(0, 10)} for ${transfer.value}`
+          );
         this.resetForm();
+        this.router.navigate(['transfer']);
       });
     }
   }
@@ -96,6 +108,7 @@ export class TransferCreateComponent implements OnInit {
     this.transferService.getUserCategories().subscribe(categories => this.categoryOptions = [... new Set(categories.map(c => c.value))]);
     this.transferService.getUserTags().subscribe(tags => this.tagsOptions = [... new Set(tags.map(c => c.value))]);
   }
+
 
   addItem(input: HTMLInputElement): void {
     const value = input.value;

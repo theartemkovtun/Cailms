@@ -17,14 +17,6 @@
           </div>
         </div>
       </div>
-      <div transfer-actions>
-        <div transfer-action-button (click)="navigateToTransferEdit(transfer.id)" icon-button>
-          <i nz-icon nzType="edit" nzTheme="outline"></i>
-        </div>
-        <div transfer-action-button (click)="deleteTransfer(dayTransfers.date, transfer.id)" icon-button>
-          <i nz-icon nzType="delete" nzTheme="outline"></i>
-        </div>
-      </div>
     </div>
     <span
       [ngClass]="{'income-value': transfer.type === TransferType.Income, 'outcome-value' : transfer.type === TransferType.Outcome }"

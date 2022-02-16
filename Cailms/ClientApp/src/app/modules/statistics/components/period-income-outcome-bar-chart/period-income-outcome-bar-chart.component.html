@@ -2,7 +2,7 @@
   <div container>
     <div *ngIf="!isNoData()" daily-line-chart>
       <div actions>
-        <nz-radio-group [(ngModel)]="type" (ngModelChange)="rebuildBarChart()" nzButtonStyle="solid">
+        <nz-radio-group type-switch [(ngModel)]="type" (ngModelChange)="rebuildBarChart()" nzButtonStyle="solid">
           <label nz-radio-button [nzValue]="PeriodBarTypeEnum.All">All</label>
           <label nz-radio-button [nzValue]="PeriodBarTypeEnum.Income">Income</label>
           <label nz-radio-button [nzValue]="PeriodBarTypeEnum.Outcome">Outcome</label>
