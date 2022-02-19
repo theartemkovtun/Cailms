@@ -1,0 +1,12 @@
+<span message>{{this.model.message}}</span>
+<div actions>
+  <button default-button nz-button nzType="default" (click)="onCancel()">
+    <span>{{this.model.cancelMessage}}</span>
+  </button>
+  <button *ngIf="model.type == ConfirmType.Danger" default-button nz-button nzType="primary" nzDanger (click)="onConfirm()">
+    <span>{{this.model.confirmMessage}}</span>
+  </button>
+  <button *ngIf="model.type == ConfirmType.Primary" default-button nz-button nzType="default" (click)="onConfirm()">
+    <span>{{this.model.confirmMessage}}</span>
+  </button>
+</div>

@@ -1,4 +1,4 @@
 <div container *ngFor="let dayTransfers of transfers">
-  <span no-select *ngIf="isMonthDisplayed(dayTransfers.date)" month-label>{{months[currentMonth]}}</span>
+  <span no-select *ngIf="isMonthDisplayed(dayTransfers)" month-label>{{getMonthString(dayTransfers.date)}}</span>
   <app-transfer-list-item transfer-item  [dayTransfers]="dayTransfers"></app-transfer-list-item>
 </div>

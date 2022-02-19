@@ -55,6 +55,9 @@ export class CalendarComponent implements OnInit {
   }
 
   calendarDateChange = () => {
+    this.currentMonthIndex = this.date.getMonth();
+    this.currentMonth = this.months[this.currentMonthIndex];
+    this.currentYear = this.date.getFullYear().toString();
     this.dateChange.emit(this.date);
   }
 }

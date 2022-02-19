@@ -1,13 +1,13 @@
 <div container>
   <div container-header flex-center>
     <span no-select transfers-day>{{dayTransfers.date}}</span>
-    <i *ngIf="!isTotalShown" (click)="toggleTotalPanel()" hover-toggle-button total-toggle-button nz-icon nzType="down" nzTheme="outline"></i>
-    <i *ngIf="isTotalShown" (click)="toggleTotalPanel()" total-toggle-button nz-icon nzType="up" nzTheme="outline"></i>
+    <i *ngIf="!isTotalShown" (click)="toggleTotalPanel()" icon-button hover-toggle-button total-toggle-button nz-icon nzType="down" nzTheme="outline"></i>
+    <i *ngIf="isTotalShown" (click)="toggleTotalPanel()" icon-button total-toggle-button nz-icon nzType="up" nzTheme="outline"></i>
   </div>
   <app-transfers-total-panel *ngIf="isTotalShown" day-total-panel [total]="dayTotal"></app-transfers-total-panel>
-  <div transfer-record *ngFor="let transfer of dayTransfers.transfers">
+  <div (click)="previewTransfer(transfer)" transfer-record *ngFor="let transfer of dayTransfers.transfers">
     <div transfer-info>
-      <div transfer-record-description>
+      <div>
         <span transfer-item-name>{{transfer.name}}</span>
         <div flex-center>
           <span *ngIf="transfer.category != null" no-select transfer-item-category>{{transfer.category}}</span>

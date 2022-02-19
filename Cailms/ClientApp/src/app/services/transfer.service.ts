@@ -58,6 +58,7 @@ export class TransferService {
     let params = new HttpParams();
     params = params.append('page', request.page.toString());
     params = params.append('take', request.take.toString());
+    if (request.type != null) { params = params.append('type', request.type.toString()); }
     if (request.startDate != null) { params = params.append('startDate', request.startDate?.toISOString().slice(0, 10)); }
     if (request.endDate != null) { params = params.append('endDate', request.endDate?.toISOString().slice(0, 10)); }
     request.categories?.forEach(sender => params = params.append('categories', sender));

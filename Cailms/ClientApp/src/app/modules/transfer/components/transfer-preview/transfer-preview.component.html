@@ -1,0 +1,21 @@
+<div flex-column>
+  <div actions>
+    <i (click)="navigateToTransferEdit()" transfer-action icon-button nz-icon nzType="edit" nzTheme="outline"></i>
+    <i (click)="deleteTransfer()" transfer-action icon-button nz-icon nzType="delete" nzTheme="outline"></i>
+    <i (click)="closeModal()" transfer-action icon-button nz-icon nzType="close" nzTheme="outline"></i>
+  </div>
+  <div no-select category>{{transfer.category}}</div>
+  <div row>
+    <div name>{{transfer.name}}</div>
+    <div [ngClass]="{'income-value': transfer.type === TransferType.Income, 'outcome-value' : transfer.type === TransferType.Outcome }" value>
+      {{buildDisplayValue(transfer.value)}}
+    </div>
+  </div>
+
+  <div tags *ngIf="transfer.tags?.length > 0">
+    <nz-tag *ngFor="let tag of transfer.tags" no-select [nzColor]="'#d6d6d6'">{{tag}}</nz-tag>
+  </div>
+
+  <div *ngIf="transfer.description !== null" description>{{transfer.description}}</div>
+
+</div>

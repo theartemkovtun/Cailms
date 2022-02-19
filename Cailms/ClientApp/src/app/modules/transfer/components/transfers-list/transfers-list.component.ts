@@ -17,16 +17,23 @@ export class TransfersListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isMonthDisplayed = (dateString: string) => {
-    const date = new Date(dateString);
-    const month = date.getMonth();
+  isMonthDisplayed = (dayTransfers: DayTransfers) => {
+    const index = this.transfers.indexOf(dayTransfers);
 
-    if (month !== this.currentMonth) {
-      this.currentMonth = month;
+    if (index === 0) {
       return true;
     }
     else {
-      return false;
+      const currentRecordDate = new Date(dayTransfers.date);
+      const previousRecordDate = new Date(this.transfers[index - 1].date);
+
+      return currentRecordDate.getMonth() !== previousRecordDate.getMonth();
     }
+  }
+
+
+  getMonthString = (dateString: string) => {
+    const date = new Date(dateString);
+    return this.months[date.getMonth()];
   }
 }

@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DayTransfers} from '../../../statistics/models/dayTransfers.model';
-import {Router} from '@angular/router';
-import {TransferService} from '../../../../services/transfer.service';
 import {TransferType} from '../../models/transferType.enum';
 import {TotalIncomeOutcome} from '../../../statistics/models/totalIncomeOutcome.model';
+import {TransferPreviewComponent} from '../transfer-preview/transfer-preview.component';
+import {MatDialog} from '@angular/material/dialog';
+import {Transfer} from '../../models/transfer.model';
 
 @Component({
   selector: 'app-transfer-list-item',
@@ -18,8 +19,7 @@ export class TransferListItemComponent implements OnInit {
 
   @Input() dayTransfers: DayTransfers;
 
-  constructor(private router: Router,
-              private transferService: TransferService) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     const transfers = this.dayTransfers.transfers;
@@ -33,23 +33,22 @@ export class TransferListItemComponent implements OnInit {
     return (type === TransferType.Outcome ? '-' : '+') + value;
   }
 
-  navigateToTransferEdit = (id: string) => {
-    this.router.navigate(['transfer', id]);
-  }
 
-  deleteTransfer = (date: string, id: string) => {
-    this.transferService.deleteTransfer(id).subscribe(_ => {
-      const dayLeftTransfers = this.dayTransfers.transfers.filter(t => t.id !== id);
-      if (dayLeftTransfers.length === 0) {
-        // this.transfers = this.transfers.filter(d => d.date !== date);
-      }
-      else {
-        this.dayTransfers.transfers = this.dayTransfers.transfers.filter(t => t.id !== id);
-      }
-    });
-  }
 
   toggleTotalPanel = () => {
     this.isTotalShown = !this.isTotalShown;
+  }
+
+  previewTransfer = (transfer: Transfer) => {
+    const dialogRef = this.dialog.open(TransferPreviewComponent, {
+      autoFocus: false,
+      width: '600px',
+      backdropClass: 'explicit-overlay-dark-backdrop',
+      data: transfer
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

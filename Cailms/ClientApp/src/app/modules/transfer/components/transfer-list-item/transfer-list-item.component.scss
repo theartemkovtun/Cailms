@@ -10,7 +10,8 @@
 
 [container-header] {
   justify-content: space-between;
-  padding: 0 10px 15px 10px;
+  padding: 0 15px 15px 15px;
+  height: 50px;
 }
 
 [transfers-day] {
@@ -57,39 +58,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-[transfer-record-description] {
-  display: flex;
-  flex-direction: column;
-}
-
-[transfer-actions] {
-  display: none;
-  align-items: center;
-  margin-right: 50px;
-}
-
-[icon-button] {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  padding: 10px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-[transfer-action-button] {
-  margin: 0 10px;
-}
-
-[icon-button]:hover {
-  background-color: #eeeeee;
-}
-
-[description-icon] {
-  cursor: pointer;
-  margin-right: 20px;
 }
 
 

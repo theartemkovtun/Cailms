@@ -1,16 +1,16 @@
 <div container>
   <i
-    [class.blocked]="isPrevValueSwitchBlocked()"
+    [class.icon-button-blocked]="isPrevValueSwitchBlocked()"
     (click)="prevValue()"
-    switch-icon
+    icon-button
     nz-icon
     nzType="left"
     nzTheme="outline"></i>
   <span no-select>{{value}}</span>
   <i
-    [class.blocked]="isNextValueSwitchBlocked()"
+    [class.icon-button-blocked]="isNextValueSwitchBlocked()"
     (click)="nextValue()"
-    switch-icon
+    icon-button
     nz-icon
     nzType="right"
     nzTheme="outline"

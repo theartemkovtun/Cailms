@@ -14,6 +14,7 @@ namespace Cailms.Application.Requests.Transfers.Queries.GetUserTransfers
         public int? Take { get; set; }        
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+        public int? Type { get; set; }
         public IEnumerable<string> Categories { get; set; }
         public IEnumerable<string> Tags { get; set; }
     }

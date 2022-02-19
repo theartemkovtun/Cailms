@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {GoogleLoginProvider, SocialAuthService} from 'angularx-social-login';
-import {Observable, of} from 'rxjs';
-import {UserStatistics} from '../modules/statistics/models/userStatistics.model';
+import {of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Token} from '../modules/auth/models/token.model';
 import {catchError, mapTo, tap} from 'rxjs/operators';
@@ -24,6 +23,17 @@ export class AuthService {
     }).pipe(
       tap(token => this.setToken(token.token, token.refreshToken, this.CailmsProviderID)),
       mapTo(true),
+      catchError(_ => {
+        return of(false);
+      }));
+  }
+
+  signup = (email: string, password: string, passwordRepeat: string) => {
+    return this.http.post<Token>(`/api/users/signup`, {
+      email,
+      password,
+      passwordRepeat
+    }).pipe(mapTo(true),
       catchError(_ => {
         return of(false);
       }));

@@ -5,7 +5,7 @@
   align-items: center;
   box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
   border-radius: 3px;
-  padding:50px;
+  padding: 50px 50px 25px 50px;
 }
 
 
@@ -70,6 +70,20 @@
   width: 15px;
   height: 15px;
   margin-right: 15px;
+}
+
+[signup-failed-container] {
+  margin-top: 25px;
+  height: 27px;
+}
+
+[signup-failed-container] span {
+  color: red;
+  font-size: 15px;
+}
+
+.ant-form-item {
+  margin-bottom: 0 !important;
 }
 
 

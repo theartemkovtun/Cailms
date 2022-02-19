@@ -18,6 +18,7 @@ import {NzIconModule} from 'ng-zorro-antd/icon';
 import {TransferModule} from './modules/transfer/transfer.module';
 import {ProfileModule} from './modules/profile/profile.module';
 import { LeftSiderLayoutComponent } from './_layout/left-sider-layout/left-sider-layout.component';
+import {SharedModule} from './shared/shared.module';
 
 registerLocaleData(en);
 
@@ -38,6 +39,7 @@ registerLocaleData(en);
     StatisticsModule,
     TransferModule,
     ProfileModule,
+    SharedModule,
     NzAvatarModule,
     NzIconModule
   ],

@@ -5,14 +5,29 @@
     <span no-select>Have an account?</span>
     <a [routerLink]="['/', 'login']">Log in</a>
   </div>
-  <div form>
-    <input nz-input placeholder="Email" nzSize="large" />
-    <input type="password" nz-input placeholder="Password" nzSize="large" />
-    <input type="password" nz-input placeholder="Repeat Password" nzSize="large" />
-    <button login-button nz-button nzSize="large" nzType="primary">
+  <form nz-form form [formGroup]="signupForm">
+    <nz-form-item>
+      <nz-form-control [nzValidateStatus]="isSignupFailed ? 'error' : null">
+        <input formControlName="email" nz-input placeholder="Email" nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzValidateStatus]="isSignupFailed ? 'error' : null">
+        <input formControlName="password" type="password" nz-input placeholder="Password" nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzValidateStatus]="isSignupFailed ? 'error' : null">
+        <input formControlName="passwordRepeat" type="password" nz-input placeholder="Repeat password" nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
+    <button (click)="signup()" login-button nz-button nzSize="large" nzType="primary">
       <span>Continue</span>
       <i nz-icon nzType="arrow-right" nzTheme="outline"></i>
     </button>
+  </form>
+  <div signup-failed-container>
+    <span *ngIf="isSignupFailed">Signup has failed</span>
   </div>
 </div>
 

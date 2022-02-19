@@ -1,0 +1,53 @@
+[category] {
+  color: silver;
+  margin-bottom: 10px;
+}
+
+[row] {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[name] {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 50px
+}
+
+[description] {
+  text-align: justify;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+
+[tags] {
+  margin-bottom: 25px;
+}
+
+[actions] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+[transfer-action] {
+  margin-left: 15px;
+}
+
+.outcome-value {
+  color: #e60f00;
+}
+
+.income-value {
+  color: #00b309
+}
+
+
+[value] {
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "Titillium Web", sans-serif;
+}

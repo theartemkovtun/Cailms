@@ -5,7 +5,7 @@
     <span no-select>New user?</span>
     <a [routerLink]="['/', 'signup']">Create Account</a>
   </div>
-  <form nz-form="" form [formGroup]="loginForm">
+  <form nz-form form [formGroup]="loginForm">
     <nz-form-item>
       <nz-form-control [nzValidateStatus]="isLoginFailed ? 'error' : null">
         <input formControlName="email" nz-input placeholder="Email" nzSize="large" />

@@ -5,6 +5,7 @@ import {GetTransfersRequest} from '../../models/getTransfersRequest.model';
 import {TransferService} from '../../../../services/transfer.service';
 import {TotalIncomeOutcome} from '../../../statistics/models/totalIncomeOutcome.model';
 import {PeriodBarTypeEnum} from '../../../statistics/models/periodBarType.enum';
+import {TransferType} from '../../models/transferType.enum';
 
 @Component({
   selector: 'app-transfers',
@@ -20,9 +21,9 @@ export class TransfersComponent implements OnInit {
   selectedCategories = [];
   selectedTags = [];
 
-  PeriodBarTypeEnum = PeriodBarTypeEnum;
+  TransferType = TransferType;
 
-  type = PeriodBarTypeEnum.All;
+  type: TransferType = null;
   total = new TotalIncomeOutcome();
   queryParams: Params;
   isMoreTransfers = false;
@@ -67,11 +68,11 @@ export class TransfersComponent implements OnInit {
   }
 
   isFiltersEmpty = () => {
-    return this.type === PeriodBarTypeEnum.All && this.dates.length === 0 && this.selectedCategories.length === 0 && this.selectedTags.length === 0;
+    return this.type === null && this.dates.length === 0 && this.selectedCategories.length === 0 && this.selectedTags.length === 0;
   }
 
   clearAllFilters = () => {
-    this.type = PeriodBarTypeEnum.All;
+    this.type = null;
     this.dates = [];
     this.selectedCategories = [];
     this.selectedTags = [];
@@ -84,6 +85,7 @@ export class TransfersComponent implements OnInit {
     this.getUserTransfersRequest.take = 10;
     this.getUserTransfersRequest.categories = this.selectedCategories;
     this.getUserTransfersRequest.tags = this.selectedTags;
+    this.getUserTransfersRequest.type = this.type;
     this.userTransfers = [];
     this.getUserTransfers();
   }

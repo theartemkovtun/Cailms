@@ -1,8 +1,8 @@
-import {ConfirmModalType} from './confirmModalType.modal';
+import {ConfirmType} from './confirmType.enum';
 
 export class ConfirmModal {
 
-  constructor(message: string, type: ConfirmModalType, confirmMessage: string, cancelMessage: string) {
+  constructor(message: string, type: ConfirmType, confirmMessage: string, cancelMessage: string) {
     this.message = message;
     this.type = type;
     this.confirmMessage = confirmMessage;
@@ -10,7 +10,7 @@ export class ConfirmModal {
   }
 
   message: string;
-  type: ConfirmModalType;
+  type: ConfirmType;
   confirmMessage: string;
   cancelMessage: string;
 }

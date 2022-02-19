@@ -64,6 +64,7 @@ namespace Cailms.Domain.Repositories
                     model.Take,
                     model.StartDate,
                     model.EndDate,
+                    model.Type,
                     categories = model.Categories.ToSqlEnumerableParameter(),
                     tags = model.Tags.ToSqlEnumerableParameter()
                 });

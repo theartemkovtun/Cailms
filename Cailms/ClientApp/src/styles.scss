@@ -154,3 +154,39 @@ body {
   border-radius: 5px;
   border: 1px solid #d9d9d9;
 }
+
+.mat-body, .mat-body-1, .mat-typography {
+  font: 14px "Inter", sans-serif !important;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: none;
+}
+
+.explicit-overlay-dark-backdrop {
+  background: rgba(0,0,0,0.10) !important;
+}
+
+.icon-button-blocked {
+  color: #ececec;
+}
+
+[icon-button] {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+[icon-button]:not(.icon-button-blocked):hover {
+  color: black;
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.mat-dialog-container {
+  border-radius: 10px !important;
+}
+
+.ant-picker-cell .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-radius: 10px !important;
+}

@@ -3,8 +3,7 @@
     <span no-select section-label>Transfers</span>
     <nz-badge [nzDot]="!isFiltersEmpty()">
       <button nz-dropdown [nzPlacement]="'bottomRight'" nzTrigger="click" [nzDropdownMenu]="menu" nz-button default-button nzType="default">
-        <i *ngIf="!isFiltersDisplayed" nz-icon nzType="down" nzTheme="outline"></i>
-        <i *ngIf="isFiltersDisplayed" nz-icon nzType="up" nzTheme="outline"></i>
+        <i nz-icon nzType="filter" nzTheme="outline"></i>
         <span>Filters</span>
       </button>
     </nz-badge>
@@ -26,10 +25,10 @@
     <div filters-inputs>
       <div flex-column>
         <span no-select filter-label>Type</span>
-        <nz-radio-group filter [(ngModel)]="type" nzSize="large" nzButtonStyle="solid">
-          <label nz-radio-button [nzValue]="PeriodBarTypeEnum.All">All</label>
-          <label nz-radio-button [nzValue]="PeriodBarTypeEnum.Income">Income</label>
-          <label nz-radio-button [nzValue]="PeriodBarTypeEnum.Outcome">Outcome</label>
+        <nz-radio-group filter [(ngModel)]="type" (ngModelChange)="filtersUpdated()" nzSize="large" nzButtonStyle="solid">
+          <label no-select nz-radio-button [nzValue]="null">All</label>
+          <label no-select nz-radio-button [nzValue]="TransferType.Income">Income</label>
+          <label no-select nz-radio-button [nzValue]="TransferType.Outcome">Outcome</label>
         </nz-radio-group>
       </div>
       <div flex-column>
