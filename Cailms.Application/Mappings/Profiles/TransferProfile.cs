@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Cailms.Application.Requests.Transfers.Commands.AddSavedTransferFilter;
 using Cailms.Application.Requests.Transfers.Commands.AddTransfer;
+using Cailms.Application.Requests.Transfers.Commands.AddTransferTemplate;
 using Cailms.Application.Requests.Transfers.Commands.UpdateTransfer;
 using Cailms.Application.Requests.Transfers.Queries.GetUserTransfers;
 using Cailms.Domain.Models.Transfers;
@@ -24,6 +26,9 @@ namespace Cailms.Application.Mappings.Profiles
             CreateMap<GetUserTransfersQuery, GetUserTransfersDomainModel>()
                 .ForMember(dto => dto.Page, opt => opt.NullSubstitute(Constants.Constants.Paging.DefaultPage))
                 .ForMember(dto => dto.Take, opt => opt.NullSubstitute(Constants.Constants.Paging.DefaultTake));
+
+            CreateMap<AddSavedTransferFilterCommand, AddSavedTransferFilterDomainModel>();
+            CreateMap<AddTransferTemplateCommand, AddTransferTemplateDomainModel>();
         }
     }
 }

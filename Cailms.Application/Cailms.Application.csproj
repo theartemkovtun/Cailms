@@ -14,6 +14,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Cailms.Common\Cailms.Common.csproj" />
+      <ProjectReference Include="..\Cailms.CurrencyExchange\Cailms.CurrencyExchange.csproj" />
       <ProjectReference Include="..\Cailms.Domain\Cailms.Domain.csproj" />
     </ItemGroup>
 

@@ -1,4 +1,10 @@
-<div container *ngFor="let dayTransfers of transfers">
+<div
+  container
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+  *ngFor="let dayTransfers of transfers">
   <span no-select *ngIf="isMonthDisplayed(dayTransfers)" month-label>{{getMonthString(dayTransfers.date)}}</span>
-  <app-transfer-list-item transfer-item  [dayTransfers]="dayTransfers"></app-transfer-list-item>
+  <app-transfer-list-item (deleteDayTransfers)="deleteDayTransfers($event)" transfer-item  [dayTransfers]="dayTransfers"></app-transfer-list-item>
 </div>

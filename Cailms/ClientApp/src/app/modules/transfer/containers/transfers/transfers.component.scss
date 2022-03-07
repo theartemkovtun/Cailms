@@ -22,6 +22,18 @@
   align-items: center;
 }
 
+[saved-templates-container] {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+[saved-templates-container] [template-button] {
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
 
 [load-more-container] {
   display:flex;
@@ -70,3 +82,6 @@
   justify-content: flex-end;
 }
 
+[filter-actions] button {
+  margin-left: 10px;
+}

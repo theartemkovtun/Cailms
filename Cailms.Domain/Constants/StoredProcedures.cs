@@ -13,6 +13,14 @@
             public const string GetUserCategories = "main.procGetUserCategories";
             public const string GetUserTags = "main.procGetUserTags";
             public const string GetTransfer = "main.procGetTransfer";
+            public const string AddSavedTransferFilter = "main.procAddSavedTransferFilter";
+            public const string RenameSavedTransferFilter = "main.procRenameSavedTransferFilter";
+            public const string GetUserSavedTransferFilters = "main.procGetUserSavedTransferFilters";
+            public const string DeleteSavedTransferFilter = "main.procDeleteSavedTransferFilter";
+            public const string RenameSavedTransferTemplate = "main.procRenameSavedTransferTemplate";
+            public const string AddSavedTransferTemplate = "main.procAddSavedTransferTemplate";
+            public const string GetUserSavedTransferTemplates = "main.procGetUserSavedTransferTemplates";
+            public const string DeleteSavedTransferTemplate = "main.procDeleteSavedTransferTemplate";
         }
 
         public static class User

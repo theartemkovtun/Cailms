@@ -9,6 +9,16 @@
     </nz-badge>
   </div>
 
+  <div saved-templates-container>
+    <app-two-state-button
+      (renameClicked)="renameSavedFilter($event)"
+      (deleteClicked)="deleteSavedFilter($event)"
+      (stateChanged)="filterTemplateButtonStateChanged($event)"
+      template-button
+      *ngFor="let filter of savedFilters"
+      [model]="filter" ></app-two-state-button>
+  </div>
+
   <app-transfers-total-panel total-panel [total]="total"></app-transfers-total-panel>
 
   <app-transfers-list [transfers]="userTransfers"></app-transfers-list>
@@ -49,6 +59,9 @@
       </div>
     </div>
     <div filter-actions>
+      <button (click)="saveFilters()" [disabled]="isFiltersEmpty()" nz-button default-button nzType="default">
+        <span>Save</span>
+      </button>
       <button (click)="clearAllFilters()" [disabled]="isFiltersEmpty()" nz-button default-button nzType="default">
         <span>Clear</span>
       </button>

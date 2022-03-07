@@ -27,6 +27,7 @@
     "bootstrap": "^4.5.0",
     "chart.js": "2.9.4",
     "ng-zorro-antd": "^10.2.2",
+    "ngx-infinite-scroll": "^10.0.1",
     "primeicons": "^5.0.0",
     "primeng": "11.4.2",
     "rxjs": "~6.6.0",

@@ -176,6 +176,13 @@ body {
   border-radius: 5px;
 }
 
+[nz-icon-button] {
+  padding: 7px 12px;
+  border-radius: 5px;
+  height: fit-content;
+  width: fit-content;
+}
+
 [icon-button]:not(.icon-button-blocked):hover {
   color: black;
   cursor: pointer;

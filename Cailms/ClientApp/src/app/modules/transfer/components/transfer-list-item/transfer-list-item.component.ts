@@ -1,10 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DayTransfers} from '../../../statistics/models/dayTransfers.model';
 import {TransferType} from '../../models/transferType.enum';
 import {TotalIncomeOutcome} from '../../../statistics/models/totalIncomeOutcome.model';
 import {TransferPreviewComponent} from '../transfer-preview/transfer-preview.component';
 import {MatDialog} from '@angular/material/dialog';
 import {Transfer} from '../../models/transfer.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-transfer-list-item',
@@ -18,8 +19,10 @@ export class TransferListItemComponent implements OnInit {
   isTotalShown = false;
 
   @Input() dayTransfers: DayTransfers;
+  @Output() deleteDayTransfers = new EventEmitter<string>();
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+              private router: Router) { }
 
   ngOnInit(): void {
     const transfers = this.dayTransfers.transfers;
@@ -33,8 +36,6 @@ export class TransferListItemComponent implements OnInit {
     return (type === TransferType.Outcome ? '-' : '+') + value;
   }
 
-
-
   toggleTotalPanel = () => {
     this.isTotalShown = !this.isTotalShown;
   }
@@ -47,8 +48,15 @@ export class TransferListItemComponent implements OnInit {
       data: transfer
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe(response => {
+      if (response.refresh) {
+        if (this.dayTransfers.transfers.length === 1) {
+          this.deleteDayTransfers.emit(this.dayTransfers.date);
+        }
+        else {
+          this.dayTransfers.transfers = this.dayTransfers.transfers.filter(t => t.id !== response.id);
+        }
+      }
     });
   }
 }

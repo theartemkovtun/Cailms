@@ -1,0 +1,18 @@
+<div *ngIf="this.model.id == null" (click)="toggleState()" [class.active]="model.isActive" container>
+  <span no-select>{{model.label}}</span>
+</div>
+<div *ngIf="this.model.id != null" (contextmenu)="contextMenu($event, menu)" (click)="toggleState()" [class.active]="model.isActive" container>
+  <span no-select>{{model.label}}</span>
+</div>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li (click)="rename()" nz-menu-item>
+      <i nz-icon nzType="edit" nzTheme="outline"></i>
+      <span>Rename</span>
+    </li>
+    <li (click)="delete()" nz-menu-item>
+      <i nz-icon nzType="delete" nzTheme="outline"></i>
+      <span>Delete</span>
+    </li>
+  </ul>
+</nz-dropdown-menu>

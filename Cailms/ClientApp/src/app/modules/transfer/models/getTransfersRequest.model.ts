@@ -1,15 +1,11 @@
-import {TransferType} from './transferType.enum';
+import {TransferFilterModel} from './transferFilter.model';
 
-export class GetTransfersRequest {
+export class GetTransfersRequest extends TransferFilterModel{
   page: number;
   take: number;
-  startDate?: Date;
-  endDate?: Date;
-  type?: TransferType;
-  categories: Array<string> = [];
-  tags: Array<string> = [];
 
   constructor(page: number, take: number) {
+    super();
     this.page = page;
     this.take = take;
   }

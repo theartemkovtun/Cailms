@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -8,6 +9,11 @@ namespace Cailms.Common.Extensions
     {
         public static string ToSqlEnumerableParameter(this IEnumerable<string> values)
         {
+            if (values == null || !values.Any())
+            {
+                return null;
+            }
+            
             return string.Join(',', values);
         }
 

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import {DayTransfers} from '../../../statistics/models/dayTransfers.model';
 
 @Component({
@@ -9,6 +9,7 @@ import {DayTransfers} from '../../../statistics/models/dayTransfers.model';
 export class TransfersListComponent implements OnInit {
 
   @Input() transfers: Array<DayTransfers> = [];
+  @Output() loadMoreTransfers = new EventEmitter();
   months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   currentMonth: number = null;
 
@@ -35,5 +36,14 @@ export class TransfersListComponent implements OnInit {
   getMonthString = (dateString: string) => {
     const date = new Date(dateString);
     return this.months[date.getMonth()];
+  }
+
+  deleteDayTransfers = (date: string) => {
+    this.transfers = this.transfers.filter(t => t.date !== date);
+  }
+
+  onScroll = () => {
+    debugger;
+    this.loadMoreTransfers.emit();
   }
 }

@@ -1,0 +1,12 @@
+<div container>
+  <input [(ngModel)]="this.name" type="text" nz-input placeholder="Filter name" nzSize="large">
+
+  <div actions>
+    <button default-button nz-button nzType="default" (click)="onCancel()">
+      <span>Cancel</span>
+    </button>
+    <button default-button nz-button nzType="default" (click)="onConfirm()">
+      <span>Save</span>
+    </button>
+  </div>
+</div>

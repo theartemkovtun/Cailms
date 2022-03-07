@@ -1,0 +1,25 @@
+[container] {
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  border: 1px solid #f8f8f8;
+}
+
+[container] span {
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Titillium Web", sans-serif;
+  color: silver;
+}
+
+
+.active {
+  box-shadow: 0 0 50px #f0f1f2;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+}
+
+.active span {
+  color: black;
+}

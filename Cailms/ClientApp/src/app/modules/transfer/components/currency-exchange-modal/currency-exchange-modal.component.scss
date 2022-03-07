@@ -1,0 +1,51 @@
+[actions] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+[action] {
+  margin-left: 15px;
+}
+
+[input-section] {
+  margin-bottom: 10px;
+}
+
+[currency-select-section] {
+  display: flex;
+  align-items: center;
+}
+
+[currency-select-section] nz-select {
+  width: 100%
+}
+
+[currency-select-section] span {
+  margin: 0 10px;
+}
+
+[buttons] {
+  padding-top: 10px;
+  border-top: 1px solid #e2e2e2;
+  width: 100%
+}
+
+[buttons] button {
+  width: 100%
+}
+
+[currency-select] {
+  width: 150px;
+  justify-self: flex-end;
+}
+
+[currency-option] {
+  display: flex;
+}
+
+[currency-option-image] {
+  height: 20px;
+  margin-right: 10px;
+}

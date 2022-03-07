@@ -5,7 +5,8 @@
     @startDate date,
     @endDate date,
     @categories nvarchar(max),
-    @tags nvarchar(max)
+    @tags nvarchar(max),
+    @type int
 AS
 BEGIN
 
@@ -24,8 +25,9 @@ BEGIN
     where t.email = @email and
           (@startDate is null or cast(concat(t.year, '-', t.month, '-', t.day) as datetime) >= @startDate) and
           (@endDate is null or cast(concat(t.year, '-', t.month, '-', t.day) as datetime) <= @endDate)  and
-          (@categories = '' or t.category in (select * from string_split(@categories, ','))) and
-          (@tags = '' or tt.tag in (select * from string_split(@tags, ',')))
+          (@categories is null or t.category in (select * from string_split(@categories, ','))) and
+          (@tags is null or tt.tag in (select * from string_split(@tags, ','))) and
+          (@type is null or t.type = @type)
     order by year desc,month desc,day desc, createdOn desc;
 
     select distinct id, value, type into #distinctTransfers  from #transfers;

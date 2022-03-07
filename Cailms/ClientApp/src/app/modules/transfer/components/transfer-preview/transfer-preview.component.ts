@@ -51,14 +51,19 @@ export class TransferPreviewComponent implements OnInit {
     dialog.afterClosed().subscribe(isConfirmed => {
       if (isConfirmed) {
         this.transferService.deleteTransfer(this.transfer.id).subscribe(_ => {
-          this.closeModal();
+          this.dialogRef.close({
+            refresh: true,
+            id: this.transfer.id
+          });
         });
       }
     });
   }
 
   closeModal = () => {
-    this.dialogRef.close();
+    this.dialogRef.close({
+      refresh: false
+    });
   }
 
 }

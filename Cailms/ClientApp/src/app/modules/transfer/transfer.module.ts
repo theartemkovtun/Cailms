@@ -26,6 +26,10 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { TransferPreviewComponent } from './components/transfer-preview/transfer-preview.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {SharedModule} from '../../shared/shared.module';
+import { SavedTransferFilterEditModalComponent } from './components/saved-transfer-filter-edit-modal/saved-transfer-filter-edit-modal.component';
+import { CurrencyExchangeModalComponent } from './components/currency-exchange-modal/currency-exchange-modal.component';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -36,31 +40,35 @@ import {MatDialogModule} from '@angular/material/dialog';
     TransferListItemComponent,
     ValuesSwitchComponent,
     CalendarComponent,
-    TransferPreviewComponent],
+    TransferPreviewComponent,
+    SavedTransferFilterEditModalComponent,
+    CurrencyExchangeModalComponent],
   exports: [
     TransfersListComponent
   ],
-  imports: [
-    CommonModule,
-    TransferRoutingModule,
-    NzIconModule,
-    NzInputModule,
-    NzCalendarModule,
-    NzSelectModule,
-    FormsModule,
-    NzRadioModule,
-    NzInputNumberModule,
-    ReactiveFormsModule,
-    NzDividerModule,
-    NzTagModule,
-    NzButtonModule,
-    NzToolTipModule,
-    NzDatePickerModule,
-    NzBadgeModule,
-    NzDropDownModule,
-    NzNoAnimationModule,
-    NzNotificationModule,
-    MatDialogModule
-  ]
+    imports: [
+        CommonModule,
+        TransferRoutingModule,
+        NzIconModule,
+        NzInputModule,
+        NzCalendarModule,
+        NzSelectModule,
+        FormsModule,
+        NzRadioModule,
+        NzInputNumberModule,
+        ReactiveFormsModule,
+        NzDividerModule,
+        NzTagModule,
+        NzButtonModule,
+        NzToolTipModule,
+        NzDatePickerModule,
+        NzBadgeModule,
+        NzDropDownModule,
+        NzNoAnimationModule,
+        NzNotificationModule,
+        MatDialogModule,
+        SharedModule,
+        InfiniteScrollModule
+    ]
 })
 export class TransferModule { }

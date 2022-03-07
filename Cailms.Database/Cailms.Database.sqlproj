@@ -89,6 +89,16 @@
     <Build Include="user\Stored Procedures\procAddRefreshToken.sql" />
     <Build Include="user\Stored Procedures\procAddUser.sql" />
     <Build Include="Security\user.sql" />
+    <Build Include="main\Tables\SavedTransferTemplate.sql" />
+    <Build Include="main\Tables\SavedTransfersFilters.sql" />
+    <Build Include="main\Stored Procedures\procRenameSavedTransferTemplate.sql" />
+    <Build Include="main\Stored Procedures\procRenameSavedTransferFilter.sql" />
+    <Build Include="main\Stored Procedures\procGetUserSavedTransferTemplates.sql" />
+    <Build Include="main\Stored Procedures\procGetUserSavedTransferFilters.sql" />
+    <Build Include="main\Stored Procedures\procDeleteSavedTransferTemplate.sql" />
+    <Build Include="main\Stored Procedures\procDeleteSavedTransferFilter.sql" />
+    <Build Include="main\Stored Procedures\procAddSavedTransferTemplate.sql" />
+    <Build Include="main\Stored Procedures\procAddSavedTransferFilter.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="DataPopulation.PostDeployment.sql" />

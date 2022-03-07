@@ -15,6 +15,14 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Cailms.Database", "Cailms.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.Tests", "Cailms.Tests\Cailms.Tests.csproj", "{E93FF722-6705-4047-A95F-4DC2330AD589}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cailms.Infrastructure ", "Cailms.Infrastructure ", "{3CF64B76-A690-463B-92EE-1FAB8E1AFCF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.Http", "Cailms.Http\Cailms.Http.csproj", "{AD9AC01F-4F93-4C00-9581-F72811EBA822}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cailms.External", "Cailms.External", "{FF615311-3B0C-49BD-BDC6-C8542643D208}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.CurrencyExchange", "Cailms.CurrencyExchange\Cailms.CurrencyExchange.csproj", "{E78A8DE3-3825-41A0-989E-8EEF429C6901}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,11 +55,23 @@ Global
 		{E93FF722-6705-4047-A95F-4DC2330AD589}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93FF722-6705-4047-A95F-4DC2330AD589}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E93FF722-6705-4047-A95F-4DC2330AD589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9AC01F-4F93-4C00-9581-F72811EBA822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9AC01F-4F93-4C00-9581-F72811EBA822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9AC01F-4F93-4C00-9581-F72811EBA822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9AC01F-4F93-4C00-9581-F72811EBA822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E78A8DE3-3825-41A0-989E-8EEF429C6901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E78A8DE3-3825-41A0-989E-8EEF429C6901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E78A8DE3-3825-41A0-989E-8EEF429C6901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E78A8DE3-3825-41A0-989E-8EEF429C6901}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AA53AC8-4975-4653-9C8B-3AC2BF01CB5E}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD9AC01F-4F93-4C00-9581-F72811EBA822} = {3CF64B76-A690-463B-92EE-1FAB8E1AFCF7}
+		{E78A8DE3-3825-41A0-989E-8EEF429C6901} = {FF615311-3B0C-49BD-BDC6-C8542643D208}
 	EndGlobalSection
 EndGlobal

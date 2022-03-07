@@ -1,0 +1,64 @@
+<div flex-column>
+  <div actions>
+    <i action icon-button nz-icon nzType="save" nzTheme="outline"></i>
+    <i (click)="closeModal()" action icon-button nz-icon nzType="close" nzTheme="outline"></i>
+  </div>
+  <input input-section nzSize="large" nz-input placeholder="Value" [(ngModel)]="model.value"/>
+
+
+  <div input-section  currency-select-section>
+    <nz-select nzSize="large" currency-select nzPlaceHolder="Select language" [(ngModel)]="model.from" [nzCustomTemplate]="currencyTemplate">
+      <nz-option currency-option nzCustomContent [nzValue]="Currency.USD" nzLabel="USD">
+        <img currency-option-image src="../../../../../assets/images/flags/USD.svg">
+        <span>USD</span>
+      </nz-option>
+      <nz-option currency-option nzCustomContent [nzValue]="Currency.EUR" nzLabel="EUR">
+        <img currency-option-image src="../../../../../assets/images/flags/EUR.svg">
+        <span>EUR</span>
+      </nz-option>
+      <nz-option currency-option nzCustomContent [nzValue]="Currency.GBP" nzLabel="GBP">
+        <img currency-option-image src="../../../../../assets/images/flags/GBP.svg">
+        <span>GBP</span>
+      </nz-option>
+      <nz-option currency-option nzCustomContent [nzValue]="Currency.UAH" nzLabel="UAH">
+        <img currency-option-image src="../../../../../assets/images/flags/UAH.svg">
+        <span>UAH</span>
+      </nz-option>
+    </nz-select>
+    <span>to</span>
+    <nz-select nzSize="large" currency-select nzPlaceHolder="Select currency" [(ngModel)]="model.to" [nzCustomTemplate]="currencyTemplate">
+      <nz-option currency-option nzCustomContent [nzValue]="Currency.USD" nzLabel="USD">
+        <img currency-option-image src="../../../../../assets/images/flags/USD.svg">
+        <span>USD</span>
+      </nz-option>
+      <nz-option currency-option nzCustomContent [nzValue]="Currency.EUR" nzLabel="EUR">
+        <img currency-option-image src="../../../../../assets/images/flags/EUR.svg">
+        <span>EUR</span>
+      </nz-option>
+      <nz-option currency-option nzCustomContent [nzValue]="Currency.GBP" nzLabel="GBP">
+        <img currency-option-image src="../../../../../assets/images/flags/GBP.svg">
+        <span>GBP</span>
+      </nz-option>
+      <nz-option currency-option nzCustomContent [nzValue]="Currency.UAH" nzLabel="UAH">
+        <img currency-option-image src="../../../../../assets/images/flags/UAH.svg">
+        <span>UAH</span>
+      </nz-option>
+    </nz-select>
+  </div>
+
+
+
+  <div buttons>
+    <button (click)="convert()" default-button nz-button nzType="default">
+      <i nz-icon nzType="swap" nzTheme="outline"></i>
+      <span>Convert</span>
+    </button>
+  </div>
+</div>
+
+
+
+<ng-template currency-option #currencyTemplate let-selected>
+  <img currency-option-image src='{{ "assets/images/flags/" + selected.nzValue + ".svg" }}'>
+  <span>{{ selected.nzLabel }}</span>
+</ng-template>

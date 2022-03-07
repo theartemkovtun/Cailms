@@ -96,5 +96,80 @@ namespace Cailms.Domain.Repositories
                     email
                 });
         }
+
+        public Task AddSavedTransferFilterAsync(AddSavedTransferFilterDomainModel model)
+        {
+            return ExecuteNonQueryProcedure(StoredProcedures.Main.AddSavedTransferFilter, new
+            {
+                model.Name,
+                model.Email,
+                model.StartDate,
+                model.EndDate,
+                model.Type,
+                categories = model.Categories.ToSqlEnumerableParameter(),
+                tags = model.Tags.ToSqlEnumerableParameter()
+            });
+        }
+
+        public Task RenameSavedTransferFilterAsync(Guid id, string name)
+        {
+            return ExecuteNonQueryProcedure(StoredProcedures.Main.RenameSavedTransferFilter, new
+            {
+                id,
+                name
+            });
+        }
+
+        public Task<IEnumerable<SavedTransferFilter>> GetUserSavedTransferFiltersAsync(string email)
+        {
+            return ExecuteJsonResultProcedureAsync<IEnumerable<SavedTransferFilter>>(StoredProcedures.Main.GetUserSavedTransferFilters,
+                new
+                {
+                    email
+                });
+        }
+
+        public Task DeleteSavedTransferFilterAsync(Guid id)
+        {
+            return ExecuteNonQueryProcedure(StoredProcedures.Main.DeleteSavedTransferFilter, new {id});
+        }
+
+        public Task AddTransferTemplateAsync(AddTransferTemplateDomainModel model)
+        {
+            return ExecuteNonQueryProcedure(StoredProcedures.Main.AddSavedTransferTemplate, new
+            {
+                model.TemplateName,
+                model.Name,
+                model.Email,
+                model.Value,
+                model.Description,
+                model.Type,
+                model.Category,
+                tags = model.Tags.ToSqlEnumerableParameter()
+            });
+        }
+
+        public Task RenameTransferTemplateAsync(Guid id, string name)
+        {
+            return ExecuteNonQueryProcedure(StoredProcedures.Main.RenameSavedTransferTemplate, new
+            {
+                id,
+                name
+            });
+        }
+
+        public Task<IEnumerable<TransferTemplate>> GetUserTransferTemplatesAsync(string email)
+        {
+            return ExecuteJsonResultProcedureAsync<IEnumerable<TransferTemplate>>(StoredProcedures.Main.GetUserSavedTransferTemplates,
+                new
+                {
+                    email
+                });
+        }
+
+        public Task DeleteTransferTemplateAsync(Guid id)
+        {
+            return ExecuteNonQueryProcedure(StoredProcedures.Main.DeleteSavedTransferTemplate, new {id});
+        }
     }
 }
