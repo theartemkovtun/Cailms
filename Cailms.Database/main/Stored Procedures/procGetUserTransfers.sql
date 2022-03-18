@@ -43,7 +43,7 @@ BEGIN
                 round(t2.value,2) value,
                 t2.type,
                 t2.category,
-                JSON_QUERY((SELECT CONCAT('[',STRING_AGG(CONCAT('"', tt.tag, '"'), ','),']') FROM #transfers tt where tt.id = t2.id and tt.tag is not null)) tags
+                JSON_QUERY((SELECT CONCAT('[',STRING_AGG(CONCAT('"', tt.tag, '"'), ','),']') FROM [TransferTag] tt where tt.transferId = t2.id and tt.tag is not null)) tags
                     from #transfers t2 where t2.date = t1.date order by t2.createdOn desc for json path) [transfers]
     into #joinedTransfers
     from #transfers t1

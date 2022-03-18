@@ -1,0 +1,35 @@
+[form-preview] {
+  display: flex;
+  flex-direction: column;
+}
+
+app-labeled-field {
+  margin-right: 50px;
+}
+
+[label-value] {
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "Titillium Web", sans-serif;
+}
+
+[income-label] {
+  color: green;
+}
+
+[outcome-label] {
+  color: red;
+}
+
+[description-field]{
+  margin-top: 25px;
+}
+
+[description-field-value] {
+  line-height: 25px;
+  font-size: 15px;
+}
+
+[tags-field] {
+  margin-top: 10px
+}

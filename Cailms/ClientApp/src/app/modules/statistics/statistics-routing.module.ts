@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {StatisticsComponent} from './containers/statistics/statistics.component';
-import {HeaderLayoutComponent} from '../../_layout/header-layout/header-layout.component';
 import {AuthGuard} from '../../shared/guards/auth.guard';
 import {LeftSiderLayoutComponent} from '../../_layout/left-sider-layout/left-sider-layout.component';
 

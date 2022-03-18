@@ -1,0 +1,50 @@
+[steps] {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+[container] {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+[steps-actions] {
+  margin: 25px 0 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+[previous-button] {
+  margin-right: auto;
+}
+
+[section] {
+  padding: 25px 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 50px #f0f1f2;
+  width: 100%;
+  height: fit-content;
+  border: 1px solid #f0f0f0;
+  margin: 10px 0;
+}
+
+[form-section] {
+  width: fit-content;
+  align-self: center;
+}
+
+[note] {
+  margin-top: 25px;
+  height: 30px;
+  align-self: flex-end;
+  color: silver
+}
+
+[job-preview] {
+  display: block;
+  margin: 0 20px;
+}

@@ -17,7 +17,7 @@ export class ExternalServicesService {
     params = params.append('to', request.to.toString());
     params = params.append('amount', request.value.toString());
     params = params.append('date', request.date.toISOString().slice(0, 10));
-    return this.http.get<CurrencyExchangeResponse>(`/api/externalServices/currencyExchange`, {params});
+    return this.http.get<CurrencyExchangeResponse>(`/api/v1/externalServices/currencyExchange`, {params});
   }
 
 }

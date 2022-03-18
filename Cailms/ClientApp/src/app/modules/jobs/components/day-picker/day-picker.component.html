@@ -1,0 +1,12 @@
+<div [class.relative-position]="isReadonly" days-select-container>
+
+  <div *ngIf="isReadonly" overlay></div>
+      <span
+        no-select
+        day-button
+        *ngFor="let _ of days; let index = index"
+        [class.selected-day]="isDaySelected(index + 1)"
+        (click)="toggleDaySelect(index + 1)"
+      >{{index + 1}}</span>
+</div>
+

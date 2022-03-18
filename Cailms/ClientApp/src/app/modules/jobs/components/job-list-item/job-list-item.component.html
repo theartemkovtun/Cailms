@@ -1,0 +1,15 @@
+<div job [class.inactive-job]="!this.job.isActive">
+  <div job-header>
+    <span job-name>{{job.jobName}}</span>
+    <div flex>
+      <nz-switch (ngModelChange)="toggleStatus()" status-switch *ngIf="this.job.isCollapsed" [ngModel]="this.job.isActive" nzSize="small"></nz-switch>
+      <i (click)="delete()" *ngIf="this.job.isCollapsed" icon-button nz-icon nzType="delete" nzTheme="outline"></i>
+      <i (click)="edit()" *ngIf="this.job.isCollapsed" icon-button nz-icon nzType="edit" nzTheme="outline"></i>
+      <i (click)="toggleInformationShow()"  *ngIf="this.job.isCollapsed" icon-button nz-icon nzType="up" nzTheme="outline"></i>
+      <i (click)="toggleInformationShow()" hover-toggle-button  *ngIf="!this.job.isCollapsed" icon-button nz-icon nzType="down" nzTheme="outline"></i>
+    </div>
+  </div>
+  <div *ngIf="this.job.isCollapsed" job-information>
+    <app-job-preview [job]="job"></app-job-preview>
+  </div>
+</div>

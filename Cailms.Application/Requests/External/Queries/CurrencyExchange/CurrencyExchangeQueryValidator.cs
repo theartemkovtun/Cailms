@@ -7,7 +7,7 @@ namespace Cailms.Application.Requests.External.Queries.CurrencyExchange
 {
     public class CurrencyExchangeQueryValidator : AbstractValidator<CurrencyExchangeQuery>
     {
-        private readonly IEnumerable<string> _availableCurrencies = new[] {"USD", "UAH", "EUR", "GPB"};
+        private readonly IEnumerable<string> _availableCurrencies = new[] {"USD", "UAH", "EUR", "GBP"};
 
         public CurrencyExchangeQueryValidator()
         {

@@ -1,0 +1,8 @@
+<div container>
+  <div value-block [style.width]="firstValueLength + '%'">
+    <span [style.color]="color" *ngIf="firstValueLength>10">{{first}}</span>
+  </div>
+  <div value-block [style.width]="secondValueLength + '%'">
+    <span [style.color]="color" *ngIf="secondValueLength>10">{{second}}</span>
+  </div>
+</div>

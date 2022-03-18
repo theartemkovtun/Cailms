@@ -14,6 +14,7 @@ using Cailms.CurrencyExchange.Models;
 using Cailms.Domain.Configurations;
 using Cailms.Domain.Repositories;
 using Cailms.Domain.Repositories.Contracts;
+using Cailms.HostedServices;
 using Cailms.Http.Clients;
 using Cailms.Http.Contracts;
 using FluentValidation;
@@ -34,6 +35,8 @@ namespace Cailms
             
             services.AddMediatR(typeof(AddTransferCommand).GetTypeInfo().Assembly);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
+            services.AddApiVersioning();
             
             services.AddCors(options =>
             {
@@ -64,6 +67,7 @@ namespace Cailms
             services.AddRepositories();
             services.AddValidators();
             services.AddClients();
+            services.AddHostedServices();
         }
         
         private static void BindOptions(this IServiceCollection services, IConfiguration configuration)
@@ -84,6 +88,7 @@ namespace Cailms
             services.AddScoped<ITransferRepository, TransferRepository>();
             services.AddScoped<IStatisticsRepository, StatisticsRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IJobRepository, JobRepository>();
         }
 
         private static void AddValidators(this IServiceCollection services)
@@ -93,6 +98,11 @@ namespace Cailms
             services.AddTransient<IValidator<CurrencyExchangeQuery>, CurrencyExchangeQueryValidator>();
             services.AddTransient<IValidator<GetUserPeriodStatisticsQuery>, GetUserPeriodStatisticsQueryValidator>();
             services.AddTransient<IValidator<GetUserStatisticsQuery>, GetUserStatisticsQueryValidator>();
+        }
+
+        private static void AddHostedServices(this IServiceCollection services)
+        {
+            services.AddHostedService<TransferJobsRunner>();
         }
     }
 }

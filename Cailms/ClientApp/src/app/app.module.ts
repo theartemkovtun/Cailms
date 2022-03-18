@@ -19,6 +19,8 @@ import {TransferModule} from './modules/transfer/transfer.module';
 import {ProfileModule} from './modules/profile/profile.module';
 import { LeftSiderLayoutComponent } from './_layout/left-sider-layout/left-sider-layout.component';
 import {SharedModule} from './shared/shared.module';
+import {JobsModule} from './modules/jobs/jobs.module';
+import {ComparisonModule} from './modules/comparison/comparison.module';
 
 registerLocaleData(en);
 
@@ -40,6 +42,8 @@ registerLocaleData(en);
     TransferModule,
     ProfileModule,
     SharedModule,
+    JobsModule,
+    ComparisonModule,
     NzAvatarModule,
     NzIconModule
   ],

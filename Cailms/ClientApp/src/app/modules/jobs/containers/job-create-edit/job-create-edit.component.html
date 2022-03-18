@@ -1,0 +1,49 @@
+<span no-select section-label>New job</span>
+
+<nz-steps steps [nzCurrent]="currentStep">
+  <nz-step nzTitle="Transfer"></nz-step>
+  <nz-step nzTitle="Days"></nz-step>
+  <nz-step nzTitle="Confirmation"></nz-step>
+</nz-steps>
+
+<div container>
+  <div section form-section *ngIf="currentStep == 0">
+    <app-transfer-form
+      [conversionEnabled]="false"
+      [saveEnabled]="false"
+      [(transfer)]="this.transfer"
+      [categoryOptions]="this.categoryOptions"
+      [tagOptions]="this.tagOptions"></app-transfer-form>
+  </div>
+  <div flex-column *ngIf="currentStep == 1">
+    <div section>
+      <app-day-picker [(selectedDays)]="selectedDays"></app-day-picker>
+    </div>
+    <div no-select note *ngIf="isNoteDisplayed()">Note: If month does not have a specified date, the transfer will be
+      created on the last one
+    </div>
+  </div>
+  <div flex-column *ngIf="currentStep == 2">
+    <div section>
+      <app-job-preview job-preview [job]="getJobModel()"></app-job-preview>
+    </div>
+  </div>
+</div>
+
+<div steps-actions>
+  <button previous-button (click)="previous()" *ngIf="this.currentStep > 0" nz-button default-button nzType="default">
+    <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+    <span>Previous</span>
+  </button>
+  <button [disabled]="isNextButtonDisabled()" (click)="next()" *ngIf="this.currentStep < 2" nz-button default-button
+          nzType="default">
+    <i nz-icon nzType="arrow-right" nzTheme="outline"></i>
+    <span>Next</span>
+  </button>
+  <button (click)="save()" *ngIf="this.currentStep == 2" nz-button default-button nzType="primary">
+    <i nz-icon nzType="plus" nzTheme="outline"></i>
+    <span>{{this.jobId == null ? 'Create' : 'Update'}}</span>
+  </button>
+</div>
+
+

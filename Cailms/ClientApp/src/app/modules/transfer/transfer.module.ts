@@ -30,6 +30,7 @@ import {SharedModule} from '../../shared/shared.module';
 import { SavedTransferFilterEditModalComponent } from './components/saved-transfer-filter-edit-modal/saved-transfer-filter-edit-modal.component';
 import { CurrencyExchangeModalComponent } from './components/currency-exchange-modal/currency-exchange-modal.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { TransferFormComponent } from './components/transfer-form/transfer-form.component';
 
 @NgModule({
   declarations: [
@@ -42,10 +43,12 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     CalendarComponent,
     TransferPreviewComponent,
     SavedTransferFilterEditModalComponent,
-    CurrencyExchangeModalComponent],
-  exports: [
-    TransfersListComponent
-  ],
+    CurrencyExchangeModalComponent,
+    TransferFormComponent],
+    exports: [
+        TransfersListComponent,
+        TransferFormComponent
+    ],
     imports: [
         CommonModule,
         TransferRoutingModule,

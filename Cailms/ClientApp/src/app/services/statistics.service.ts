@@ -12,11 +12,11 @@ export class StatisticsService {
   constructor(private http: HttpClient) { }
 
   getUserStatistics(month: number, year: number): Observable<UserStatistics> {
-    return this.http.get<UserStatistics>(`/api/statistics?month=${month}&year=${year}`);
+    return this.http.get<UserStatistics>(`/api/v1/statistics?month=${month}&year=${year}`);
   }
 
   getUserPeriodStatistics(month: number, year: number): Observable<Array<PeriodIncomeOutcome>> {
-    return this.http.get<Array<PeriodIncomeOutcome>>(`/api/statistics/period?month=${month}&year=${year}`);
+    return this.http.get<Array<PeriodIncomeOutcome>>(`/api/v1/statistics/period?month=${month}&year=${year}`);
   }
 }
 

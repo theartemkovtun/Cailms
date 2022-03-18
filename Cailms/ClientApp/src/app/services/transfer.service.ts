@@ -26,7 +26,7 @@ export class TransferService {
 
 
   addTransfer(transfer: Transfer): Observable<string>{
-    return this.http.post<string>(`/api/transfers`, {
+    return this.http.post<string>(`/api/v1/transfers`, {
       name: transfer.name,
       value: transfer.value,
       description: transfer.description,
@@ -38,7 +38,7 @@ export class TransferService {
   }
 
   updateTransfer(transfer: Transfer): Observable<string>{
-    return this.http.put<string>(`/api/transfers`, {
+    return this.http.put<string>(`/api/v1/transfers`, {
       id: transfer.id,
       name: transfer.name,
       value: transfer.value,
@@ -51,11 +51,11 @@ export class TransferService {
   }
 
   deleteTransfer = (id: string) => {
-    return this.http.delete(`/api/transfers/${id}`);
+    return this.http.delete(`/api/v1/transfers/${id}`);
   }
 
   getTransfer(id: string): Observable<Transfer> {
-    return this.http.get<Transfer>(`/api/transfers/${id}`);
+    return this.http.get<Transfer>(`/api/v1/transfers/${id}`);
   }
 
   getUserTransfers(request: GetTransfersRequest): Observable<TransfersListModel> {
@@ -68,19 +68,19 @@ export class TransferService {
     request.categories?.forEach(sender => params = params.append('categories', sender));
     request.tags?.forEach(sender => params = params.append('tags', sender));
 
-    return this.http.get<TransfersListModel>(`/api/transfers`, {params});
+    return this.http.get<TransfersListModel>(`/api/v1/transfers`, {params});
   }
 
   getUserCategories(): Observable<Array<SingleValue<string>>> {
-    return this.http.get<Array<SingleValue<string>>>(`/api/transfers/categories`);
+    return this.http.get<Array<SingleValue<string>>>(`/api/v1/transfers/categories`);
   }
 
   getUserTags(): Observable<Array<SingleValue<string>>> {
-    return this.http.get<Array<SingleValue<string>>>(`/api/transfers/tags`);
+    return this.http.get<Array<SingleValue<string>>>(`/api/v1/transfers/tags`);
   }
 
   addSavedTransfersFilter = (request: AddSavedTransfersFilterRequest) => {
-    return this.http.post(`/api/transfers/savedFilters`, {
+    return this.http.post(`/api/v1/transfers/savedFilters`, {
       name: request.name,
       startDate:  request.startDate != null ? TransferService.yyyymmddDate(request.startDate) : null,
       endDate:  request.endDate != null ? TransferService.yyyymmddDate(request.endDate) : null,
@@ -91,19 +91,19 @@ export class TransferService {
   }
 
   getUserSavedTransferFilters(): Observable<Array<SavedTransfersFilter>> {
-    return this.http.get<Array<SavedTransfersFilter>>(`/api/transfers/savedFilters`);
+    return this.http.get<Array<SavedTransfersFilter>>(`/api/v1/transfers/savedFilters`);
   }
 
   renameSavedTransfersFilter = (id: string, name: string) => {
-    return this.http.put('/api/transfers/savedFilters', { id, name });
+    return this.http.put('/api/v1/transfers/savedFilters', { id, name });
   }
 
   deleteSavedTransfersFilter = (id: string) => {
-    return this.http.delete(`/api/transfers/savedFilters/${id}`);
+    return this.http.delete(`/api/v1/transfers/savedFilters/${id}`);
   }
 
   addTransfersTemplate = (request: AddTransferTemplateRequest) => {
-    return this.http.post(`/api/transfers/templates`, {
+    return this.http.post(`/api/v1/transfers/templates`, {
       name: request.name,
       templateName: request.templateName,
       description: request.description,
@@ -115,15 +115,15 @@ export class TransferService {
   }
 
   getUserTransfersTemplates(): Observable<Array<TransferTemplate>> {
-    return this.http.get<Array<TransferTemplate>>(`/api/transfers/templates`);
+    return this.http.get<Array<TransferTemplate>>(`/api/v1/transfers/templates`);
   }
 
   renameTransfersTemplate = (id: string, name: string) => {
-    return this.http.put('/api/transfers/templates', { id, name });
+    return this.http.put('/api/v1/transfers/templates', { id, name });
   }
 
   deleteTransfersTemplate = (id: string) => {
-    return this.http.delete(`/api/transfers/templates/${id}`);
+    return this.http.delete(`/api/v1/transfers/templates/${id}`);
   }
 
 }

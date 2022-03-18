@@ -1,0 +1,28 @@
+[container] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+[value-block] {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 50px #f0f1f2;
+}
+
+[value-block] span {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Titillium Web", sans-serif;
+  margin-left: 25px;
+}
+
+[value-block]:first-child {
+  margin-right: 10px;
+}

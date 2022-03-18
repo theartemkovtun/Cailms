@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   login = (email: string, password: string) => {
-    return this.http.post<Token>(`/api/users/login`, {
+    return this.http.post<Token>(`/api/v1//users/login`, {
       email,
       password
     }).pipe(
@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   signup = (email: string, password: string, passwordRepeat: string) => {
-    return this.http.post<Token>(`/api/users/signup`, {
+    return this.http.post<Token>(`/api/v1//users/signup`, {
       email,
       password,
       passwordRepeat

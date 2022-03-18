@@ -1,0 +1,26 @@
+<div form-preview>
+  <div flex>
+    <app-labeled-field label="Type">
+      <span *ngIf="this.job.type == TransferType.Income" income-label label-value>Income</span>
+      <span *ngIf="this.job.type == TransferType.Outcome" outcome-label label-value>Outcome</span>
+    </app-labeled-field>
+    <app-labeled-field label="Name">
+      <span label-value>{{this.job.name}}</span>
+    </app-labeled-field>
+    <app-labeled-field label="Value">
+      <span label-value>{{this.job.value}}</span>
+    </app-labeled-field>
+    <app-labeled-field *ngIf="this.job.category" label="Category">
+      <span label-value>{{this.job.category}}</span>
+    </app-labeled-field>
+    <app-labeled-field label="Days">
+      <span label-value>{{this.selectedDayFormatted()}}</span>
+    </app-labeled-field>
+  </div>
+  <app-labeled-field description-field *ngIf="this.job.description" label="Description">
+    <span description-field-value>{{this.job.description}}</span>
+  </app-labeled-field>
+  <div *ngIf="this.job.tags?.length != 0" tags-field flex>
+    <nz-tag *ngFor="let tag of this.job.tags" [nzColor]="'#d6d6d6'">{{tag}}</nz-tag>
+  </div>
+</div>

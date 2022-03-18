@@ -14,60 +14,14 @@
   border: 1px solid #f0f0f0;
 }
 
-[form] {
-  display: flex;
-}
 
-[form-header] {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
-}
 
 [date-pick-section] {
   margin-right: 25px
 }
 
-
-[form-input-section] {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 25px
-}
-
-[form-input-label] {
-  margin-bottom: 5px;
-  font-size: 13px;
-}
-
-[currency-exchange-button] {
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
-[currency-exchange-tag] {
-  margin-left: 10px;
-  height: fit-content;
-  padding: 10px;
-  margin-top: 20px;
-  border-radius: 5px;
-  font-size: 13px;
-}
-
-[price-input] {
-  width: 120px;
-}
-
 [date-pick] {
   width: fit-content;
-}
-
-[inputs] {
-  width: 700px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px
 }
 
 [actions] {
@@ -92,15 +46,6 @@ nz-divider {
   display: block;
 }
 
-[type-label] {
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
-}
-
-[type-label] i {
-  margin-right: 10px
-}
 
 [saved-templates-container] {
   display: flex;
@@ -112,4 +57,8 @@ nz-divider {
 [saved-templates-container] [template-button] {
   margin-right: 20px;
   margin-bottom: 30px;
+}
+
+[form] {
+  display: flex;
 }

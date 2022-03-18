@@ -13,15 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cailms.Common", "Cailms.Com
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Cailms.Database", "Cailms.Database\Cailms.Database.sqlproj", "{4BF785CE-4DAA-4ACE-9746-AD3A26708466}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.Tests", "Cailms.Tests\Cailms.Tests.csproj", "{E93FF722-6705-4047-A95F-4DC2330AD589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cailms.Tests", "Cailms.Tests\Cailms.Tests.csproj", "{E93FF722-6705-4047-A95F-4DC2330AD589}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cailms.Infrastructure ", "Cailms.Infrastructure ", "{3CF64B76-A690-463B-92EE-1FAB8E1AFCF7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cailms.Infrastructure", "Cailms.Infrastructure", "{3CF64B76-A690-463B-92EE-1FAB8E1AFCF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.Http", "Cailms.Http\Cailms.Http.csproj", "{AD9AC01F-4F93-4C00-9581-F72811EBA822}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cailms.Http", "Cailms.Http\Cailms.Http.csproj", "{AD9AC01F-4F93-4C00-9581-F72811EBA822}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cailms.External", "Cailms.External", "{FF615311-3B0C-49BD-BDC6-C8542643D208}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.CurrencyExchange", "Cailms.CurrencyExchange\Cailms.CurrencyExchange.csproj", "{E78A8DE3-3825-41A0-989E-8EEF429C6901}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cailms.CurrencyExchange", "Cailms.CurrencyExchange\Cailms.CurrencyExchange.csproj", "{E78A8DE3-3825-41A0-989E-8EEF429C6901}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cailms.Functions", "Cailms.Functions\Cailms.Functions.csproj", "{C2E4584F-DA49-4E25-9228-92D2285FD026}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,15 +65,19 @@ Global
 		{E78A8DE3-3825-41A0-989E-8EEF429C6901}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E78A8DE3-3825-41A0-989E-8EEF429C6901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E78A8DE3-3825-41A0-989E-8EEF429C6901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E4584F-DA49-4E25-9228-92D2285FD026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E4584F-DA49-4E25-9228-92D2285FD026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E4584F-DA49-4E25-9228-92D2285FD026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E4584F-DA49-4E25-9228-92D2285FD026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5AA53AC8-4975-4653-9C8B-3AC2BF01CB5E}
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AD9AC01F-4F93-4C00-9581-F72811EBA822} = {3CF64B76-A690-463B-92EE-1FAB8E1AFCF7}
 		{E78A8DE3-3825-41A0-989E-8EEF429C6901} = {FF615311-3B0C-49BD-BDC6-C8542643D208}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AA53AC8-4975-4653-9C8B-3AC2BF01CB5E}
 	EndGlobalSection
 EndGlobal

@@ -99,6 +99,15 @@
     <Build Include="main\Stored Procedures\procDeleteSavedTransferFilter.sql" />
     <Build Include="main\Stored Procedures\procAddSavedTransferTemplate.sql" />
     <Build Include="main\Stored Procedures\procAddSavedTransferFilter.sql" />
+    <Build Include="main\Tables\JobDay.sql" />
+    <Build Include="main\Tables\Job.sql" />
+    <Build Include="main\Stored Procedures\procUpdateJob.sql" />
+    <Build Include="main\Stored Procedures\procRunTodayJobs.sql" />
+    <Build Include="main\Stored Procedures\procGetUserJobs.sql" />
+    <Build Include="main\Stored Procedures\procGetJob.sql" />
+    <Build Include="main\Stored Procedures\procDeleteJob.sql" />
+    <Build Include="main\Stored Procedures\procAddJob.sql" />
+    <Build Include="main\Stored Procedures\procToggleJobStatus.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="DataPopulation.PostDeployment.sql" />

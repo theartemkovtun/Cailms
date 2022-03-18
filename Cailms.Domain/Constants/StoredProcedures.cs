@@ -19,6 +19,14 @@
             public const string DeleteSavedTransferFilter = "main.procDeleteSavedTransferFilter";
             public const string RenameSavedTransferTemplate = "main.procRenameSavedTransferTemplate";
             public const string AddSavedTransferTemplate = "main.procAddSavedTransferTemplate";
+            public const string AddJob = "main.procAddJob";
+            public const string RunTodayJobs = "main.procRunTodayJobs";
+            public const string GetUserJobs = "main.procGetUserJobs";
+            public const string GetJob = "main.procGetJob";
+            public const string DeleteJob = "main.procDeleteJob";
+            public const string UpdateJob = "main.procUpdateJob";
+            public const string ToggleJobStatus = "main.procToggleJobStatus";
+            
             public const string GetUserSavedTransferTemplates = "main.procGetUserSavedTransferTemplates";
             public const string DeleteSavedTransferTemplate = "main.procDeleteSavedTransferTemplate";
         }

@@ -1,0 +1,46 @@
+<div container>
+  <div flex>
+    <nz-radio-group filter [(ngModel)]="filters.field" (ngModelChange)="this.filtersUpdated()" nzButtonStyle="solid">
+      <label nz-radio-button [nzValue]="JobsOrderField.CreatedOn">Created On</label>
+      <label nz-radio-button [nzValue]="JobsOrderField.Name">Name</label>
+    </nz-radio-group>
+
+    <nz-radio-group filter [(ngModel)]="filters.order" (ngModelChange)="this.filtersUpdated()" nzButtonStyle="solid">
+      <label nz-radio-button [nzValue]="Order.Ascending">
+        <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
+      </label>
+      <label nz-radio-button [nzValue]="Order.Descending">
+        <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
+      </label>
+    </nz-radio-group>
+  </div>
+
+  <div actions>
+    <i
+      *ngIf="!isExpandAllShow"
+      (click)="expandCollapseAll(true)"
+      nzTooltipTitle="Expand all"
+      nzTooltipPlacement="left"
+      nz-tooltip
+      [nzTooltipMouseEnterDelay]="1"
+      icon-button
+      nz-icon
+      nzType="down"
+      nzTheme="outline"
+    ></i>
+    <i
+      *ngIf="isExpandAllShow"
+      (click)="expandCollapseAll(false)"
+      nzTooltipTitle="Collapse all"
+      nzTooltipPlacement="left"
+      nz-tooltip
+      [nzTooltipMouseEnterDelay]="1"
+      icon-button
+      nz-icon
+      nzType="up"
+      nzTheme="outline"
+    ></i>
+  </div>
+</div>
+
+

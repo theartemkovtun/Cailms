@@ -1,18 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {TransferType} from '../../models/transferType.enum';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
 import {TransferService} from '../../../../services/transfer.service';
 import {NzNotificationService} from 'ng-zorro-antd/notification';
 import {SavedTransferFilterEditModalComponent} from '../../components/saved-transfer-filter-edit-modal/saved-transfer-filter-edit-modal.component';
 import {MatDialog} from '@angular/material/dialog';
-import {CurrencyExchangeModalComponent} from '../../components/currency-exchange-modal/currency-exchange-modal.component';
-import {CurrencyExchangeModel} from '../../models/currencyExchange.model';
-import {ExternalServicesService} from '../../../../services/externalServices.service';
-import {CurrencyExchangeResponse} from '../../models/currencyExchangeResponse.model';
 import {TwoStateButtonModel} from '../../../../shared/models/twoStateButtonModel.model';
 import {ConfirmModalComponent} from '../../../../shared/components/confirm-modal/confirm-modal.component';
 import {ConfirmType} from '../../../../shared/models/confirmType.enum';
+import {Transfer} from '../../models/transfer.model';
+import {TransferType} from '../../models/transferType.enum';
 
 @Component({
   selector: 'app-transfer-create',
@@ -21,27 +18,19 @@ import {ConfirmType} from '../../../../shared/models/confirmType.enum';
 })
 export class TransferCreateComponent implements OnInit {
 
+  categoryOptions = [];
+  tagOptions = [];
+  transfer = new Transfer();
   isDataLoaded = false;
-  date: Date;
-  form!: FormGroup;
   transferId: string;
-  category: string;
-  IncomeOutcomeType = TransferType;
-  type = TransferType.Outcome;
-  categoryOptions = ['Personal', 'Food', 'Housing', 'Utilities', 'Entertainment', 'Education'];
-  tagsOptions = [];
-  tags = [];
   index = 0;
   savedTemplates = [];
-  currencyExchangeModel: CurrencyExchangeModel;
-  currencyRates: CurrencyExchangeResponse;
 
   constructor(public router: Router,
               private formBuilder: FormBuilder,
               private transferService: TransferService,
               private activatedRoute: ActivatedRoute,
               private notification: NzNotificationService,
-              private externalServices: ExternalServicesService,
               public dialog: MatDialog) {
     this.transferId = this.activatedRoute.snapshot.params.transferId;
   }
@@ -49,62 +38,32 @@ export class TransferCreateComponent implements OnInit {
   ngOnInit(): void {
     if (this.transferId != null) {
       this.transferService.getTransfer(this.transferId).subscribe(transfer => {
-        this.date = new Date(transfer.date);
-        this.form = this.formBuilder.group({
-          name: [transfer.name, [Validators.required]],
-          value: [transfer.value, [Validators.required]],
-          description: [transfer.description]
-        });
-        this.tags = transfer.tags;
-        this.category = transfer.category;
-        this.type = transfer.type;
-        this.isDataLoaded = true;
+        this.transfer = transfer;
+        this.transfer.date = new Date(this.transfer.date)
       });
     }
-    else {
-      this.date = new Date();
-      this.form = this.formBuilder.group({
-        name: [null, [Validators.required]],
-        value: [0, [Validators.required]],
-        description: [null]
-      });
-      this.isDataLoaded = true;
-    }
+    this.isDataLoaded = true;
     this.updateOptions();
     this.updateTemplates();
   }
 
-  backToStatistics = () => {
-    this.router.navigate(['/']);
-  }
-
   createTransfer = () => {
-    const transfer = {
-      id: this.transferId,
-      name: this.form.controls.name.value,
-      description: this.form.controls.description.value,
-      value: this.form.controls.value.value,
-      date: this.date,
-      type: this.type,
-      category: this.category,
-      tags: this.tags
-    };
     if (this.transferId == null) {
-      this.transferService.addTransfer(transfer).subscribe(_ => {
+      this.transferService.addTransfer(this.transfer).subscribe(_ => {
         this.notification
           .success(
             'Transfer has been added',
-            `${transfer.name} on ${transfer.date.toISOString().slice(0, 10)} for ${transfer.value}`
+            `${this.transfer.name} \n on ${this.transfer.date.toString().slice(0, 10)} for ${this.transfer.value}`
           );
         this.resetForm();
       });
     }
     else {
-      this.transferService.updateTransfer(transfer).subscribe(_ => {
+      this.transferService.updateTransfer(this.transfer).subscribe(_ => {
         this.notification
           .success(
             'Transfer has been updated',
-            `${transfer.name} on ${transfer.date.toISOString().slice(0, 10)} for ${transfer.value}`
+            `${this.transfer.name} on ${this.transfer.date.toString().slice(0, 10)} for ${this.transfer.value}`
           );
         this.resetForm();
         this.router.navigate(['transfer']);
@@ -113,87 +72,43 @@ export class TransferCreateComponent implements OnInit {
   }
 
   resetForm = () => {
-    this.form.reset();
-    this.category = null;
-    this.tags = [];
-    this.removeConversion();
+    this.transfer = new Transfer();
     this.unsetTemplates();
   }
 
   updateOptions = () => {
     this.transferService.getUserCategories().subscribe(categories => this.categoryOptions = [... new Set(categories.map(c => c.value))]);
-    this.transferService.getUserTags().subscribe(tags => this.tagsOptions = [... new Set(tags.map(c => c.value))]);
+    this.transferService.getUserTags().subscribe(tags => this.tagOptions = [... new Set(tags.map(c => c.value))]);
   }
 
-  convertButtonClicked = () => {
-    const dialogRef = this.dialog.open(CurrencyExchangeModalComponent, {
-      autoFocus: false,
-      width: '400px',
-      backdropClass: 'explicit-overlay-dark-backdrop',
-    });
-
-    dialogRef.afterClosed().subscribe(model => {
-      this.currencyExchangeModel = model;
-      this.currencyExchangeModel.date = this.date;
-
-      this.updateCurrencyRates();
-    });
-  }
-
-  updateCurrencyRates = () => {
-    this.externalServices.getCurrencyRates(this.currencyExchangeModel).subscribe(response => {
-      this.currencyRates = response;
-      this.form.get('value').setValue(this.currencyRates.rateForAmount.toFixed(2));
-    });
-  }
-
-
-  addItem(input: HTMLInputElement): void {
-    const value = input.value;
-    if (this.categoryOptions.indexOf(value) === -1) {
-      this.categoryOptions = [...this.categoryOptions, input.value || `New item ${this.index++}`];
-    }
-  }
-
-  removeConversion = () => {
-    this.currencyExchangeModel = null;
-    this.currencyRates = null;
-    this.form.get('value').setValue(0);
-  }
-
-  dateChanged = () => {
-    if (this.currencyExchangeModel != null) {
-      this.currencyExchangeModel.date = this.date;
-      this.updateCurrencyRates();
-    }
-  }
+  dateChanged = (date: Date) => {}
 
   templateButtonStateChanged = (filter: TwoStateButtonModel) => {
     this.savedTemplates.filter(b => b.label !== filter.label).forEach(b => b.isActive = false);
 
     if (filter.isActive) {
-      this.form = this.formBuilder.group({
-        name: [filter.data.name, [Validators.required]],
-        value: [filter.data.value, [Validators.required]],
-        description: [filter.data.description]
-      });
-      this.category = filter.data.category;
-      this.tags = filter.data.tags;
-      this.type = filter.data.type;
+      this.transfer = {
+        id: null,
+        date: this.transfer.date,
+        name: filter.data.name,
+        value: filter.data.value,
+        description: filter.data.description,
+        category: filter.data.category,
+        tags: filter.data.tags,
+        type: filter.data.type
+      };
     }
     else {
       this.resetForm();
     }
   }
 
-  isTemplateSelected = () => {
-    this.savedTemplates.some(b => b.isActive);
-  }
-
-  isFormEmpty = () => {
-    const controls = this.form.controls;
-    const emptyValues = [null, ''];
-    return !emptyValues.includes(controls.name.value) || !emptyValues.includes(controls.description.value) || controls.value.value !== 0 || this.category != null || this.tags.length !== 0;
+  isCreateUpdateButtonActive = () => {
+    const sharedRequirements = this.transfer.name != null && this.transfer.value !== 0;
+    if (this.transfer.type === TransferType.Outcome) {
+      return sharedRequirements && this.transfer.category != null;
+    }
+    return sharedRequirements;
   }
 
   updateTemplates = () => {
@@ -230,15 +145,14 @@ export class TransferCreateComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(name => {
       if (name != null) {
-        const controls = this.form.controls;
         this.transferService.addTransfersTemplate({
           templateName: name,
-          name: controls.name.value,
-          description: controls.description.value,
-          value: controls.value.value,
-          type: this.type,
-          category: this.category,
-          tags: this.tags
+          name: this.transfer.name,
+          description: this.transfer.description,
+          value: this.transfer.value,
+          type: this.transfer.type,
+          category: this.transfer.category,
+          tags: this.transfer.tags
         }).subscribe(_ => this.updateTemplates());
       }
     });

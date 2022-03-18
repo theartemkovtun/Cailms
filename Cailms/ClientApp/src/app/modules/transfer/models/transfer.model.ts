@@ -9,4 +9,11 @@ export class Transfer {
   type: TransferType;
   category: string;
   tags: Array<string>;
+
+  constructor() {
+    this.date = new Date();
+    this.type = TransferType.Outcome;
+    this.value = 0;
+    this.tags = [];
+  }
 }

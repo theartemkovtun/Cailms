@@ -12,79 +12,22 @@
       ></app-two-state-button>
   </div>
 
-  <div form [formGroup]="form">
+  <div form>
     <div section date-pick-section>
       <div date-pick>
-        <app-calendar [(date)]="date" (dateChange)="dateChanged()"></app-calendar>
+        <app-calendar [(date)]="this.transfer.date" (dateChange)="dateChanged($event)"></app-calendar>
       </div>
     </div>
-    <div section>
-      <div inputs>
-        <div form-header>
-          <nz-radio-group [(ngModel)]="type" [ngModelOptions]="{standalone: true}" nzButtonStyle="solid">
-            <label nz-radio-button [nzValue]="IncomeOutcomeType.Income">
-              <div type-label>
-                <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
-                <span>Income</span>
-              </div>
-            </label>
-            <label nz-radio-button [nzValue]="IncomeOutcomeType.Outcome">
-              <div type-label>
-                <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
-                <span>Outcome</span>
-              </div>
-            </label>
-          </nz-radio-group>
-          <i (click)="saveTemplate()" *ngIf="!isTemplateSelected() && isFormEmpty()" icon-button nz-icon nzType="save" nzTheme="outline"></i>
-        </div>
-        <div form-input-section>
-          <span form-input-label>Name*</span>
-          <input background-input formControlName="name" nzSize="large" nz-input placeholder="..." />
-        </div>
-        <div flex>
-          <div form-input-section>
-            <span form-input-label>{{this.type == IncomeOutcomeType.Income ? 'Value' : 'Price'}}*</span>
-            <nz-input-number
-              [nzDisabled]="currencyRates != null"
-              background-input
-              formControlName="value"
-              price-input
-              nzSize="large"
-              [nzMin]="0.01"
-              [nzStep]="0.01"
-            ></nz-input-number>
-          </div>
-          <button *ngIf="currencyRates == null" (click)="convertButtonClicked()" currency-exchange-button nz-icon-button nz-button nzType="default">
-            <i nz-icon nzType="dollar" nzTheme="outline"></i>
-          </button>
-          <button *ngIf="currencyRates != null" (click)="removeConversion()" currency-exchange-button nz-icon-button nz-button nzType="default">
-            <i nz-icon nzType="close-circle" nzTheme="outline"></i>
-          </button>
-          <nz-tag currency-exchange-tag *ngIf="currencyRates != null" no-select  [nzColor]="'red'">{{currencyExchangeModel.value}} {{currencyExchangeModel.from}} -> {{currencyExchangeModel.to}} (Rate {{currencyRates.rate}})</nz-tag>
-        </div>
-        <div form-input-section>
-          <span form-input-label>Description</span>
-          <textarea background-input formControlName="description" nzSize ="large" nz-input placeholder="..." [nzAutosize]="{ minRows: 5, maxRows: 5 }"></textarea>
-        </div>
-        <div *ngIf="this.type == IncomeOutcomeType.Outcome" form-input-section>
-          <span form-input-label>Category*</span>
-
-          <nz-select [(ngModel)]="category" [ngModelOptions]="{standalone: true}" nzShowSearch nzAllowClear nzSize="large">
-            <nz-option *ngFor="let option of categoryOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
-          </nz-select>
-        </div>
-        <div form-input-section>
-          <span form-input-label>Tags</span>
-
-          <nz-select [(ngModel)]="tags" [ngModelOptions]="{standalone: true}" nzSize="large" nzMode="tags">
-            <nz-option *ngFor="let option of tagsOptions" [nzLabel]="option" [nzValue]="option"></nz-option>
-          </nz-select>
-        </div>
-      </div>
+    <div *ngIf="isDataLoaded" section>
+      <app-transfer-form
+        [(transfer)]="this.transfer"
+        (saveTemplate)="saveTemplate()"
+        [categoryOptions]="this.categoryOptions"
+        [tagOptions]="this.tagOptions"></app-transfer-form>
     </div>
   </div>
   <div actions>
-    <button (click)="createTransfer()" nz-button nzType="default" default-button>
+    <button [disabled]="!isCreateUpdateButtonActive()" (click)="createTransfer()" nz-button default-button nzType="primary">
       <i *ngIf="transferId == null" nz-icon nzType="plus" nzTheme="outline"></i>
       <i *ngIf="transferId != null" nz-icon nzType="check" nzTheme="outline"></i>
       <span>{{this.transferId == null ? 'Create' : 'Update'}}</span>

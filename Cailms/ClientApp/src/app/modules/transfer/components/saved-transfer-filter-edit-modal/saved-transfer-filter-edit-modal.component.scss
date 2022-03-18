@@ -4,6 +4,16 @@
   width: 100%;
 }
 
+[label] {
+  margin-bottom: 5px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+}
+
+input {
+  border-radius: 5px;
+}
+
 [actions] {
   width: 100%;
   margin-top: 20px;

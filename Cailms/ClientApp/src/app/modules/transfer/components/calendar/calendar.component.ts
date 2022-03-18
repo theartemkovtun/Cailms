@@ -20,16 +20,24 @@ export class CalendarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.setToToday();
+    if (this.date != null) {
+      this.setDate(this.date);
+    }
+    else {
+      this.setToToday();
+    }
     this.getYears();
   }
 
   setToToday = () => {
-    this.date = new Date();
-    this.currentMonthIndex = this.date.getMonth();
+    this.setDate(new Date());
+  }
+
+  setDate = (date: Date) => {
+    this.currentMonthIndex = date.getMonth();
     this.currentMonth = this.months[this.currentMonthIndex];
-    this.currentYear = this.date.getFullYear().toString();
-    this.dateChange.emit(this.date);
+    this.currentYear = date.getFullYear().toString();
+    this.dateChange.emit(date);
   }
 
   monthChanged = (month: string) => {

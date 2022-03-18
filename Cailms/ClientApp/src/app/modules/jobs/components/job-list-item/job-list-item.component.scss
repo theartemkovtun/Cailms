@@ -1,0 +1,53 @@
+
+[job] {
+  width: 100%;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 50px #f0f1f2;
+  height: fit-content;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inactive-job {
+  background-color: #f8f8f8;
+}
+
+[job-header] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+}
+
+[job-name] {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Titillium Web", sans-serif;
+}
+
+[icon-button] {
+  margin-left: 30px;
+}
+
+[hover-toggle-button] {
+  display:none;
+}
+
+[job]:hover [hover-toggle-button] {
+  display: block;
+}
+
+
+[job-information] {
+  margin-top: 25px;
+  padding-top: 30px;
+  border-top: 1px solid #f0f0f0;
+}
+
+[status-switch] {
+  margin-top: 5px;
+}

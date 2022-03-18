@@ -94,9 +94,6 @@ export class TransfersComponent implements OnInit {
     this.transferService.getUserTags().subscribe(tags => this.tagOptions = [... new Set(tags.map(c => c.value))]);
   }
 
-  backToStatistics = () => {
-    this.router.navigate(['/']);
-  }
 
   loadMoreTransfers = () => {
     this.getUserTransfersRequest.page++;
@@ -112,6 +109,7 @@ export class TransfersComponent implements OnInit {
     this.dates = [];
     this.selectedCategories = [];
     this.selectedTags = [];
+    this.unsetSavedFiltersSelected();
     this.filtersUpdated();
   }
 
@@ -263,5 +261,9 @@ export class TransfersComponent implements OnInit {
         });
       }
     });
+  }
+
+  unsetSavedFiltersSelected = () => {
+    this.savedFilters.forEach(t => t.isActive = false);
   }
 }

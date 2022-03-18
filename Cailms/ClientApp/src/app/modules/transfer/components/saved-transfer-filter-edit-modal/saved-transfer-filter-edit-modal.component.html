@@ -1,11 +1,13 @@
 <div container>
-  <input [(ngModel)]="this.name" type="text" nz-input placeholder="Filter name" nzSize="large">
-
+  <span label>Name</span>
+  <input [(ngModel)]="this.name" type="text" nz-input placeholder="..." nzSize="large">
   <div actions>
     <button default-button nz-button nzType="default" (click)="onCancel()">
+      <i nz-icon nzType="close" nzTheme="outline"></i>
       <span>Cancel</span>
     </button>
-    <button default-button nz-button nzType="default" (click)="onConfirm()">
+    <button default-button nz-button nzType="primary" (click)="onConfirm()">
+      <i nz-icon nzType="check" nzTheme="outline"></i>
       <span>Save</span>
     </button>
   </div>

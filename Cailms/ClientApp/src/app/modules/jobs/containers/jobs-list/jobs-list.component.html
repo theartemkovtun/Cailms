@@ -1,0 +1,25 @@
+<div header>
+  <span no-select section-label>Jobs</span>
+  <button (click)="newJob()" nz-button default-button nzType="default">
+    <i nz-icon nzType="plus" nzTheme="outline"></i>
+    <span>Add</span>
+  </button>
+</div>
+
+<app-jobs-filters
+  job-filters
+  [(filters)]="this.filters"
+  (filtersChange)="this.getJobs()"
+  [isExpandAllShow]="isAllJobsCollapsed()"
+  (expandCollapseClicked)="setAllJobsCollapsedState($event)"
+></app-jobs-filters>
+
+<div flex-column jobs-list>
+  <app-job-list-item
+    (onDelete)="deleteJob($event)"
+    (onEdit)="editJob($event)"
+    (onStatusToggle)="toggleJobState($event)"
+    *ngFor="let job of jobs"
+    [job]="job"
+  ></app-job-list-item>
+</div>
